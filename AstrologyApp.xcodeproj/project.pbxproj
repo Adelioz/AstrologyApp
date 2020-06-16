@@ -11,6 +11,7 @@
 		FC6E29742498D91100D2BFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29732498D91100D2BFE3 /* Assets.xcassets */; };
 		FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */; };
 		FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */; };
+		FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29902498EE9100D2BFE3 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		FC6E29762498D91100D2BFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6E29782498D91100D2BFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		FC6E29902498EE9100D2BFE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 		FC6E29602498D90F00D2BFE3 = {
 			isa = PBXGroup;
 			children = (
+				FC6E29902498EE9100D2BFE3 /* .gitignore */,
 				FC6E296B2498D90F00D2BFE3 /* AstrologyApp */,
 				FC6E296A2498D90F00D2BFE3 /* Products */,
 			);
@@ -128,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */,
+				FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */,
 				FC6E29742498D91100D2BFE3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
