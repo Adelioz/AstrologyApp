@@ -1,0 +1,6 @@
+framework module Pods_AstrologyApp {
+  umbrella header "Pods-AstrologyApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

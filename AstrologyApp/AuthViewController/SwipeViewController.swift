@@ -13,7 +13,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        secondScrollView.delegate = self
+        scrollView.delegate = self
         view.backgroundColor = .white
         setupView()
         setupBottomControl()
@@ -59,14 +59,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
-    let helloLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Добро пожаловать!"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+
     
     
     
@@ -110,7 +103,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     
     
     //MARK: ScrollView
-    let secondScrollView: UIScrollView = {
+    let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.isPagingEnabled = true
@@ -119,31 +112,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         return scroll
     }()
     
-    let firstScrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.isPagingEnabled = true
-        scroll.bounces = false
-        //scroll.showsHorizontalScrollIndicator = false
-        return scroll
-    }()
-    
-    
-    //MARK: VIEWS
-    
-    let greenView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .green
-        return view
-    }()
-    
-    let redView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .red
-        return view
-    }()
+
     
     //MARK: BUTTONS
     let pageControl: UIPageControl = {
@@ -167,15 +136,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     @objc private func handlePrev() {
-        
-        if pageControl.currentPage == 0 {
-            firstScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        }
-        
         let nextIndex = max(pageControl.currentPage - 1, 0)
-        secondScrollView.setContentOffset(CGPoint(x: (nextIndex * Int(view.frame.width)), y: 0), animated: true)
-        
-        
+        scrollView.setContentOffset(CGPoint(x: (nextIndex * Int(view.frame.width)), y: 0), animated: true)
     }
     
     let nextButton: UIButton = {
@@ -190,63 +152,50 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     
     @objc private func handleNext() {
         let nextIndex = min(pageControl.currentPage + 1, 3)
-        secondScrollView.setContentOffset(CGPoint(x: (nextIndex * Int(view.frame.width)), y: 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: (nextIndex * Int(view.frame.width)), y: 0), animated: true)
     }
     
-    let helloNextButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("NEXT", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    @objc private func nextPage() {
-        firstScrollView.setContentOffset(CGPoint(x: Int(view.frame.width), y: 0), animated: true)
-    }
-    
+
     
     //MARK: SETUPS
     func setupView() {
         
-        secondScrollView.addSubview(nameLabel)
-        secondScrollView.addSubview(placeLabel)
-        secondScrollView.addSubview(dateLabel)
-        secondScrollView.addSubview(timeLabel)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(placeLabel)
+        scrollView.addSubview(dateLabel)
+        scrollView.addSubview(timeLabel)
 
 
         nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         nameLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: secondScrollView.topAnchor, constant: 200).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
 
 
         placeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         placeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         placeLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
-        placeLabel.topAnchor.constraint(equalTo: secondScrollView.topAnchor, constant: 200).isActive = true
+        placeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
         //
         dateLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         dateLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: placeLabel.trailingAnchor).isActive = true
-        dateLabel.topAnchor.constraint(equalTo: secondScrollView.topAnchor, constant: 200).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
         //
         timeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         timeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         timeLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor).isActive = true
-        timeLabel.topAnchor.constraint(equalTo: secondScrollView.topAnchor, constant: 200).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
 
 
-        secondScrollView.addSubview(nameTF)
-        secondScrollView.addSubview(placeTF)
-        secondScrollView.addSubview(dateTF)
-        secondScrollView.addSubview(timeTF)
+        scrollView.addSubview(nameTF)
+        scrollView.addSubview(placeTF)
+        scrollView.addSubview(dateTF)
+        scrollView.addSubview(timeTF)
 
         nameTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
         nameTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
         nameTF.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 100).isActive = true
-        nameTF.leadingAnchor.constraint(equalTo: secondScrollView.leadingAnchor, constant: 50).isActive = true
+        nameTF.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50).isActive = true
 
         placeTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
         placeTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
@@ -265,46 +214,12 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
 //
         
         
-        greenView.addSubview(secondScrollView)
-        secondScrollView.topAnchor.constraint(equalTo: greenView.topAnchor).isActive = true
-        secondScrollView.bottomAnchor.constraint(equalTo: greenView.bottomAnchor).isActive = true
-        secondScrollView.leadingAnchor.constraint(equalTo: greenView.leadingAnchor).isActive = true
-        secondScrollView.trailingAnchor.constraint(equalTo: greenView.trailingAnchor).isActive = true
-        secondScrollView.contentSize = CGSize(width: (view.frame.width * 4), height: view.frame.height)
-        
-        view.addSubview(firstScrollView)
-        firstScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        firstScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        firstScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        firstScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        firstScrollView.contentSize = CGSize(width: (view.frame.width * 2), height: view.frame.height)
-        
-        firstScrollView.addSubview(redView)
-        redView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        redView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
-        
-        firstScrollView.addSubview(greenView)
-        greenView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        greenView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
-        greenView.leadingAnchor.constraint(equalTo: redView.trailingAnchor).isActive = true
-        
-        
-
-        redView.addSubview(helloLabel)
-        helloLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        helloLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        helloLabel.topAnchor.constraint(equalTo: redView.topAnchor, constant: 200).isActive = true
-        
-        redView.addSubview(helloNextButton)
-        helloNextButton.bottomAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
-        helloNextButton.leadingAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
-        helloNextButton.trailingAnchor.constraint(equalTo: redView.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        helloNextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        helloNextButton.backgroundColor = .gray
-
-        
-        
-        
+        view.addSubview(scrollView)
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.contentSize = CGSize(width: (view.frame.width * 4), height: view.frame.height)
     }
     
     fileprivate func setupBottomControl() {
@@ -312,12 +227,12 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         bottomControlStackView.translatesAutoresizingMaskIntoConstraints = false
         bottomControlStackView.distribution = .fillEqually
 
-        greenView.addSubview(bottomControlStackView)
+        view.addSubview(bottomControlStackView)
 
         NSLayoutConstraint.activate([
-            bottomControlStackView.bottomAnchor.constraint(equalTo: greenView.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            bottomControlStackView.leadingAnchor.constraint(equalTo: greenView.leadingAnchor),
-            bottomControlStackView.trailingAnchor.constraint(equalTo: greenView.trailingAnchor),
+            bottomControlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            bottomControlStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomControlStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomControlStackView.heightAnchor.constraint(equalToConstant: 50)])
     }
     
@@ -329,6 +244,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         
         pageControl.currentPage = Int((scrollView.contentOffset.x + (CGFloat(view.frame.width) / 2)) / CGFloat(view.frame.width))
         print(pageControl.currentPage)
+        hideKeyboardOnSwipe()
         
     }
 
@@ -340,13 +256,13 @@ extension SwipeViewController: UIGestureRecognizerDelegate {
     }
     
     func setupGesture() {
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideKeyboardOnSwipeDown))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.hideKeyboardOnSwipe))
         swipeDown.delegate = self
         swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         view.addGestureRecognizer(swipeDown)
     }
     
-    @objc func hideKeyboardOnSwipeDown() {
+    @objc func hideKeyboardOnSwipe() {
         view.endEditing(true)
     }
     
