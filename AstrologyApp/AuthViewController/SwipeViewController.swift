@@ -29,7 +29,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = .white
         setupAllViews()
         setupGesture()
-        
+        placeTF.delegate = self
     }
     
     
@@ -369,6 +369,8 @@ extension SwipeViewController {
 }
 
 
-extension SwipeViewController {
-    
+extension SwipeViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        show(PlaceChooseViewController(), sender: nil)
+    }
 }
