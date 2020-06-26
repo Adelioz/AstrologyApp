@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let helloViewController = RegistrationViewController()
         
+        //window?.rootViewController = SwipeViewController()
+        
         window?.rootViewController = helloViewController
+//        print(Auth.auth().currentUser?.email)
+//        if let user = Auth.auth().currentUser {
+//            FirestoreService.shared.getUserData(user: user) { (result) in
+//                switch result {
+//
+//                case .success(let muser):
+//                    self.window?.rootViewController = MainMenuViewController()
+//                case .failure(let error):
+//                    self.window?.rootViewController = helloViewController
+//                }
+//            }
+//        } else {
+//            window?.rootViewController = helloViewController
+//        }
         
         return true
     }

@@ -167,7 +167,19 @@ class RegistrationViewController: UIViewController {
     }()
     
     @objc func registerPressed() {
-        
+        AuthService.shared.register(email: loginTextField.text,
+                                    password: passTextField.text,
+                                    confirmPassword: confirmPassTextField.text!) { (result) in
+                                        switch result {
+                                            
+                                        case .success(let user):
+                                            self.showAlert(with: "Успешно!", and: "Вы зарегистрированы", completion: {
+                                                self.present(SwipeViewController(currentUser: user), animated: true)
+                                            })
+                                        case .failure(let error):
+                                            self.showAlert(with: "Ошибка", and: error.localizedDescription)
+                                        }
+        }
     }
     
     let alreadyOnboardButton: UIButton = {
@@ -248,4 +260,18 @@ extension RegistrationViewController: UIGestureRecognizerDelegate {
     @objc func hideKeyboardOnSwipe() {
         view.endEditing(true)
     }
+}
+
+extension RegistrationViewController {
+    
+    func showAlert(with title: String, and message: String, completion: @escaping () -> Void = {}) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
 }

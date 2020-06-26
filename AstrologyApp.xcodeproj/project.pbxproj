@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C441491BE942C7D48702E5BE /* Pods_AstrologyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */; };
 		FC101837249D21520073BA80 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101836249D21520073BA80 /* MainMenuViewController.swift */; };
-		FC10183A249D218D0073BA80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101839249D218D0073BA80 /* User.swift */; };
+		FC10183A249D218D0073BA80 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101839249D218D0073BA80 /* MUser.swift */; };
 		FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */; };
 		FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101840249D49DB0073BA80 /* RegistrationViewController.swift */; };
 		FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */; };
@@ -17,7 +17,13 @@
 		FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */; };
 		FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */; };
 		FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29902498EE9100D2BFE3 /* .gitignore */; };
+		FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CF6EA24A342B900833683 /* DateExtension.swift */; };
 		FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BA249E231500110B2E /* LoginViewController.swift */; };
+		FCA752BF249E283A00110B2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BE249E283A00110B2E /* AuthService.swift */; };
+		FCA752C1249E314D00110B2E /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C0249E314D00110B2E /* Validators.swift */; };
+		FCA752C4249E320100110B2E /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C3249E320100110B2E /* AuthError.swift */; };
+		FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C5249E3DE400110B2E /* FirestoreService.swift */; };
+		FCA752C8249E408200110B2E /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C7249E408200110B2E /* UserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +31,7 @@
 		894EE3E57923D03F44309D47 /* Pods-AstrologyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9313DA00CCF5173038568A46 /* Pods-AstrologyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.release.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC101836249D21520073BA80 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		FC101839249D218D0073BA80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FC101839249D218D0073BA80 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC101840249D49DB0073BA80 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FC6E29692498D90F00D2BFE3 /* AstrologyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstrologyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +41,13 @@
 		FC6E29782498D91100D2BFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		FC6E29902498EE9100D2BFE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FC9CF6EA24A342B900833683 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FCA752BA249E231500110B2E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCA752BE249E283A00110B2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FCA752C0249E314D00110B2E /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		FCA752C3249E320100110B2E /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		FCA752C5249E3DE400110B2E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		FCA752C7249E408200110B2E /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +90,7 @@
 		FC101838249D21790073BA80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FC101839249D218D0073BA80 /* User.swift */,
+				FC101839249D218D0073BA80 /* MUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,7 +117,8 @@
 		FC6E296B2498D90F00D2BFE3 /* AstrologyApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCA752BD249E26D600110B2E /* New Group */,
+				FCA752C2249E31EF00110B2E /* Helpers */,
+				FCA752BD249E26D600110B2E /* Service */,
 				FC101838249D21790073BA80 /* Model */,
 				FC101835249D212F0073BA80 /* MainMenu */,
 				FC6E298D2498E6CD00D2BFE3 /* AuthViewController */,
@@ -128,11 +141,24 @@
 			path = AuthViewController;
 			sourceTree = "<group>";
 		};
-		FCA752BD249E26D600110B2E /* New Group */ = {
+		FCA752BD249E26D600110B2E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FCA752BE249E283A00110B2E /* AuthService.swift */,
+				FCA752C5249E3DE400110B2E /* FirestoreService.swift */,
 			);
-			path = "New Group";
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FCA752C2249E31EF00110B2E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCA752C0249E314D00110B2E /* Validators.swift */,
+				FC9CF6EA24A342B900833683 /* DateExtension.swift */,
+				FCA752C3249E320100110B2E /* AuthError.swift */,
+				FCA752C7249E408200110B2E /* UserError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +278,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */,
-				FC10183A249D218D0073BA80 /* User.swift in Sources */,
+				FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */,
+				FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */,
+				FC10183A249D218D0073BA80 /* MUser.swift in Sources */,
 				FC101837249D21520073BA80 /* MainMenuViewController.swift in Sources */,
 				FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */,
+				FCA752C8249E408200110B2E /* UserError.swift in Sources */,
+				FCA752C1249E314D00110B2E /* Validators.swift in Sources */,
 				FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */,
+				FCA752C4249E320100110B2E /* AuthError.swift in Sources */,
 				FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */,
+				FCA752BF249E283A00110B2E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

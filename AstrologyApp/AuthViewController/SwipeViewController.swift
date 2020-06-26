@@ -7,22 +7,105 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SwipeViewController: UIViewController, UIScrollViewDelegate {
 
+    private let currentUser: User
+
+    init(currentUser: User) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.delegate = self
         view.backgroundColor = .white
-        setupView()
-        setupBottomControl()
+        setupAllViews()
         setupGesture()
         
     }
     
     
-    //MARK: LABELS
+    let scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.isPagingEnabled = true
+        scroll.bounces = false
+        scroll.showsHorizontalScrollIndicator = false
+        return scroll
+    }()
+    
+    func setupAllViews() {
+        view.addSubview(scrollView)
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.contentSize = CGSize(width: (view.frame.width * 4), height: view.frame.height)
+        
+        setupViews()
+        setupBottomControl()
+    }
+    
+    let nameView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let placeView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let dateView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let timeView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    func setupViews() {
+        scrollView.addSubview(nameView)
+        scrollView.addSubview(placeView)
+        scrollView.addSubview(dateView)
+        scrollView.addSubview(timeView)
+        
+        nameView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        nameView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        
+        placeView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        placeView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        placeView.leadingAnchor.constraint(equalTo: nameView.trailingAnchor).isActive = true
+        
+        dateView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        dateView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        dateView.leadingAnchor.constraint(equalTo: placeView.trailingAnchor).isActive = true
+        
+        timeView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
+        timeView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        timeView.leadingAnchor.constraint(equalTo: dateView.trailingAnchor).isActive = true
+        
+        
+        setupNameView()
+        setupPlaceView()
+        setupDateView()
+        setupTimeView()
+    }
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Как вас зовут?"
@@ -32,38 +115,6 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
-    let placeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Место рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Дата рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let timeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Время рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-
-    
-    
-    
-    //MARK: TextFields
     let nameTF: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
@@ -71,6 +122,28 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         tf.font = UIFont.boldSystemFont(ofSize: 30)
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
+    }()
+    
+    func setupNameView() {
+        nameView.addSubview(nameLabel)
+        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 200).isActive = true
+        
+        nameView.addSubview(nameTF)
+        nameTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        nameTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
+        nameTF.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 100).isActive = true
+        nameTF.leadingAnchor.constraint(equalTo: nameView.leadingAnchor, constant: 50).isActive = true
+    }
+    
+    let placeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Место рождения"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let placeTF: UITextField = {
@@ -82,39 +155,81 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         return tf
     }()
     
-    let dateTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .yellow
-        tf.font = UIFont.boldSystemFont(ofSize: 30)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
+    func setupPlaceView() {
+        placeView.addSubview(placeLabel)
+        placeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        placeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        placeLabel.topAnchor.constraint(equalTo: placeView.topAnchor, constant: 200).isActive = true
+        
+        placeView.addSubview(placeTF)
+        placeTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        placeTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
+        placeTF.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 100).isActive = true
+        placeTF.leadingAnchor.constraint(equalTo: placeView.leadingAnchor, constant: 50).isActive = true
+        
+    }
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Дата рождения"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    let timeTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .gray
-        tf.font = UIFont.boldSystemFont(ofSize: 30)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
+    let datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.datePickerMode = .date
+        picker.locale = Locale(identifier: "ru_RU")
+        return picker
     }()
     
+    func setupDateView() {
+        dateView.addSubview(dateLabel)
+        dateLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        dateLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: dateView.topAnchor, constant: 200).isActive = true
+        
+        dateView.addSubview(datePicker)
+        datePicker.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 100).isActive = true
+        datePicker.centerXAnchor.constraint(equalTo: dateView.centerXAnchor).isActive = true
+    }
     
-    
-    //MARK: ScrollView
-    let scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.isPagingEnabled = true
-        scroll.bounces = false
-        scroll.showsHorizontalScrollIndicator = false
-        return scroll
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Время рождения"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-
+    let timePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.datePickerMode = .time
+        picker.locale = Locale(identifier: "ru_RU")
+        return picker
+    }()
     
-    //MARK: BUTTONS
+    func setupTimeView() {
+        timeView.addSubview(timeLabel)
+        timeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        timeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: timeView.topAnchor, constant: 200).isActive = true
+        
+        timeView.addSubview(timePicker)
+        timePicker.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 100).isActive = true
+        timePicker.centerXAnchor.constraint(equalTo: timeView.centerXAnchor).isActive = true
+    }
+    
+    
+    
+    //MARK: BOTTOM CONTROL
+    
+    
     let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
@@ -151,84 +266,57 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     @objc private func handleNext() {
+        
+        //Добавить обработку текст филдов
+        
+                if pageControl.currentPage == 3 {
+                    FirestoreService.shared.saveProfileWith(uid: currentUser.uid,
+                                                            email: currentUser.email!,
+                                                            name: nameTF.text,
+                                                            birthPlace: placeTF.text,
+                                                            birthTimestamp: formFromPickersToTimestamp(date: datePicker.date, time: timePicker.date)) { (result) in
+                                                                
+                                                                switch result {
+                                                                    
+                                                                case .success(let muser):
+                                                                    self.showAlert(with: "Успешно!", and: "Приятного пользования", completion: {
+                                                                        self.present(MainMenuViewController(), animated: true)
+                                                                    })
+                                                                    print(muser)
+                                                                case .failure(let error):
+                                                                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+                                                                }
+                    }
+//                    FirestoreService.shared.saveProfileWith(id: currentUser.uid,
+//                                                            email: currentUser.email!,
+//                                                            name: nameTF.text,
+//                                                            birthDate: String(Int(datePicker.date.timeIntervalSince1970)),
+//                                                            birthTime: String(Int(timePicker.date.timeIntervalSince1970))) { (result) in
+//                                                                switch result {
+//
+//                                                                case .success(let muser):
+//                                                                    self.showAlert(with: "Успешно!", and: "Приятного пользования", completion: {
+//                                                                        self.present(MainMenuViewController(), animated: true)
+//                                                                    })
+//                                                                    print(muser)
+//                                                                case .failure(let error):
+//                                                                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+//                                                                }
+//        }
+                    
+                }
+        
         let nextIndex = min(pageControl.currentPage + 1, 3)
         scrollView.setContentOffset(CGPoint(x: (nextIndex * Int(view.frame.width)), y: 0), animated: true)
     }
     
-
-    
-    //MARK: SETUPS
-    func setupView() {
-        
-        scrollView.addSubview(nameLabel)
-        scrollView.addSubview(placeLabel)
-        scrollView.addSubview(dateLabel)
-        scrollView.addSubview(timeLabel)
-
-
-        nameLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
-
-
-        placeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        placeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        placeLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
-        placeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
-        //
-        dateLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        dateLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: placeLabel.trailingAnchor).isActive = true
-        dateLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
-        //
-        timeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        timeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        timeLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor).isActive = true
-        timeLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200).isActive = true
-
-
-        scrollView.addSubview(nameTF)
-        scrollView.addSubview(placeTF)
-        scrollView.addSubview(dateTF)
-        scrollView.addSubview(timeTF)
-
-        nameTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        nameTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        nameTF.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 100).isActive = true
-        nameTF.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50).isActive = true
-
-        placeTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        placeTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        placeTF.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 100).isActive = true
-        placeTF.leadingAnchor.constraint(equalTo: nameTF.trailingAnchor, constant: 100).isActive = true
-
-        dateTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        dateTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        dateTF.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 100).isActive = true
-        dateTF.leadingAnchor.constraint(equalTo: placeTF.trailingAnchor, constant: 100).isActive = true
-
-        timeTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        timeTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        timeTF.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 100).isActive = true
-        timeTF.leadingAnchor.constraint(equalTo: dateTF.trailingAnchor, constant: 100).isActive = true
-//
-        
-        
-        view.addSubview(scrollView)
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.contentSize = CGSize(width: (view.frame.width * 4), height: view.frame.height)
-    }
-    
-    fileprivate func setupBottomControl() {
+    func setupBottomControl() {
         let bottomControlStackView = UIStackView(arrangedSubviews: [prevButton, pageControl, nextButton])
         bottomControlStackView.translatesAutoresizingMaskIntoConstraints = false
         bottomControlStackView.distribution = .fillEqually
-
+        
         view.addSubview(bottomControlStackView)
-
+        
         NSLayoutConstraint.activate([
             bottomControlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             bottomControlStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -265,5 +353,22 @@ extension SwipeViewController: UIGestureRecognizerDelegate {
     @objc func hideKeyboardOnSwipe() {
         view.endEditing(true)
     }
+    
+}
+
+extension SwipeViewController {
+    func showAlert(with title: String, and message: String, completion: @escaping () -> Void = {}) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+}
+
+
+extension SwipeViewController {
     
 }
