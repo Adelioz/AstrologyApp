@@ -38,7 +38,6 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = .white
         setupAllViews()
         setupGesture()
-        placeTF.delegate = self
         geoVC.geoSendDelegate = self
     }
     
@@ -156,7 +155,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
-    let placeTF: UITextField = {
+    let placeTFd: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
         tf.backgroundColor = .yellow
@@ -164,6 +163,29 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
+    
+    let placeTF: UIButton = {
+        let button = UIButton()
+        button.setTitle("", for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .yellow
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func showGeoVC() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+            let geo = PlaceChooseViewController()
+            geo.geoSendDelegate = self
+            self.view.addSubview(geo)
+        }
+    }
     
     func setupPlaceView() {
         placeView.addSubview(placeLabel)
@@ -283,7 +305,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
                     FirestoreService.shared.saveProfileWith(uid: currentUser.uid,
                                                             email: currentUser.email!,
                                                             name: nameTF.text,
-                                                            birthPlace: placeTF.text,
+                                                            birthPlace: placeTF.titleLabel!.text,
                                                             birthTimestamp: formFromPickersToTimestamp(date: datePicker.date, time: timePicker.date),
                                                             geo: geoPoint) { (result) in
                                                                 
@@ -379,22 +401,13 @@ extension SwipeViewController {
     }
 }
 
-
-extension SwipeViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        show(geoVC, sender: nil)
-    }
-}
-
 extension SwipeViewController: GeoPointSendDelegate {
     func setGeo(city: String, geo: GeoPoint) {
-        placeTF.text = city
+        placeTF.setTitle(city, for: .normal)
         geoPoint = geo
     }
     
-//    func setGeo(city: String, ge) {
-//        placeTF.text = city
-//    }
+
     
     
 }

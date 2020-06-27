@@ -13,7 +13,7 @@ protocol GeoPointSendDelegate {
     func setGeo(city: String, geo: GeoPoint)
 }
 
-class PlaceChooseViewController: UIViewController {
+class PlaceChooseViewController: UIView {
 
     var geoSendDelegate: GeoPointSendDelegate!
 
@@ -25,17 +25,32 @@ class PlaceChooseViewController: UIViewController {
         search.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
+    let container: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        return view
+    }()
+    
     var geoPoint: GeoPoint?
     var city: String?
     
     var resultsArray: [Dictionary<String, AnyObject>] = Array()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        viewSetup()
         searchSetup()
         tableViewSetup()
+        animateIn()
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
     func tableViewSetup() {
         
@@ -47,12 +62,12 @@ class PlaceChooseViewController: UIViewController {
         
         
         
-        view.addSubview(tableView)
+        container.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 20).isActive = true
         
         
     }
@@ -60,10 +75,51 @@ class PlaceChooseViewController: UIViewController {
     func searchSetup() {
         searchBar.delegate = self
         
-        view.addSubview(searchBar)
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        container.addSubview(searchBar)
+        searchBar.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
+        searchBar.searchBarStyle = .minimal
+        searchBar.becomeFirstResponder()
+    }
+    
+    @objc func animateOut() {
+        
+        self.endEditing(true)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.container.transform = CGAffineTransform(translationX: 0, y: self.frame.height)
+            self.alpha = 0
+        }) { (complete) in
+            if complete {
+                self.removeFromSuperview()
+            }
+        }
+        
+        print("pizdariki")
+    }
+    
+    @objc func animateIn() {
+        
+        self.container.transform = CGAffineTransform(translationX: 0, y: self.frame.height)
+        self.alpha = 1
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.container.transform = .identity
+            self.alpha = 1
+        })
+    }
+    
+    func viewSetup() {
+        //self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.animateOut)))
+        self.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        self.frame = UIScreen.main.bounds
+        self.addSubview(container)
+        
+        container.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        //container.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        container.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        container.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95).isActive = true
+        container.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9).isActive = true
     }
     
 
@@ -84,19 +140,21 @@ extension PlaceChooseViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(resultsArray[indexPath.row])
+        
         let result = resultsArray[indexPath.row]
+        print(result)
         let str = result["structured_formatting"] as! Dictionary<String, AnyObject>
         city = str["main_text"] as? String
         guard let city = city else { return }
         getLocation(city: city) { (geo) in
-            print(geo)
-            print(city)
+
             self.geoSendDelegate.setGeo(city: city, geo: geo)
-            self.dismiss(animated: true, completion: nil)
+            print(city)
+            //self.dismiss(animated: true, completion: nil)
+            self.animateOut()
         }
 
-        //guard let geo = geoPoint else { print("ЕБТВОЮМАТЬ"); return }
+        
         
     }
     
@@ -109,12 +167,12 @@ extension PlaceChooseViewController: UISearchBarDelegate {
         //        searchCountry = countryNameArr.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
         //        searching = true
         searchPlaceFromGoogle(place: searchText)
-        //print(searchText)
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        dismiss(animated: true, completion: nil)
-        
+        //dismiss(animated: true, completion: nil)
+        self.animateOut()
     }
     
 }
@@ -131,10 +189,10 @@ extension PlaceChooseViewController {
                     let jsonDict = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
                     
                     if let dict = jsonDict as? Dictionary<String, AnyObject> {
-                        print(dict)
+                        
                         if let results = dict["predictions"] as? [Dictionary<String, AnyObject>] {
                             self.resultsArray.removeAll()
-                            //print("json == \(results)")
+                            
                             for dct in results {
                                 self.resultsArray.append(dct)
                             }
