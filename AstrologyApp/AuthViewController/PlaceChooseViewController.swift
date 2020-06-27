@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
+protocol GeoPointSendDelegate {
+    func setGeo(city: String, geo: GeoPoint)
+}
 
 class PlaceChooseViewController: UIViewController {
 
+    var geoSendDelegate: GeoPointSendDelegate!
 
     let urlBuilder = URLBuilder()
     let tableView = UITableView()
@@ -20,6 +25,8 @@ class PlaceChooseViewController: UIViewController {
         search.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
+    var geoPoint: GeoPoint?
+    var city: String?
     
     var resultsArray: [Dictionary<String, AnyObject>] = Array()
     
@@ -34,10 +41,9 @@ class PlaceChooseViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 50
-        tableView.backgroundColor = .gray
+        tableView.rowHeight = 65
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.estimatedRowHeight = 44.0
+        //tableView.estimatedRowHeight = 44.0
         
         
         
@@ -77,6 +83,23 @@ extension PlaceChooseViewController: UITableViewDelegate, UITableViewDataSource 
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //print(resultsArray[indexPath.row])
+        let result = resultsArray[indexPath.row]
+        let str = result["structured_formatting"] as! Dictionary<String, AnyObject>
+        city = str["main_text"] as? String
+        guard let city = city else { return }
+        getLocation(city: city) { (geo) in
+            print(geo)
+            print(city)
+            self.geoSendDelegate.setGeo(city: city, geo: geo)
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        //guard let geo = geoPoint else { print("ЕБТВОЮМАТЬ"); return }
+        
+    }
+    
     
 }
 
@@ -91,6 +114,7 @@ extension PlaceChooseViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         dismiss(animated: true, completion: nil)
+        
     }
     
 }
@@ -105,8 +129,9 @@ extension PlaceChooseViewController {
             if error == nil {
                 if let responseData = data {
                     let jsonDict = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                    print(jsonDict!)
+                    
                     if let dict = jsonDict as? Dictionary<String, AnyObject> {
+                        print(dict)
                         if let results = dict["predictions"] as? [Dictionary<String, AnyObject>] {
                             self.resultsArray.removeAll()
                             //print("json == \(results)")
@@ -116,7 +141,6 @@ extension PlaceChooseViewController {
                         } else {
                             print("FUCK!!!")
                         }
-                        //print("JSON === \(dict)")
                     }
                 }
                 
@@ -133,4 +157,46 @@ extension PlaceChooseViewController {
         }
         task.resume()
     }
+    
+    func getLocation(city: String, completion: @escaping (GeoPoint) -> Void) {
+        let urlRequest = urlBuilder.buildGetURL(city: city)
+        guard let url = urlRequest else { print("HUI"); return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("PIZDA")
+                return
+            }
+            
+            if let responseData = data {
+                let jsonDict = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                
+                if let dict = jsonDict as? Dictionary<String, AnyObject> {
+                    
+                    if let results = dict["results"] as? [Dictionary<String, AnyObject>] {
+                        
+                        //print("json == \(results)")
+                        for dct in results {
+                            if let geometry = dct["geometry"] as? Dictionary<String, AnyObject> {
+                                let location = geometry["location"] as? Dictionary<String, AnyObject>
+                                let lat = location!["lat"] as? Double
+                                let lng = location!["lng"] as? Double
+                                
+                                let geo = GeoPoint(latitude: lat!, longitude: lng!)
+                                DispatchQueue.main.async {
+                                    completion(geo)
+                                }//self.geoPoint = GeoPoint(latitude: lat!, longitude: lng!)
+                            } else {
+                                print("GEOMETRY ERROR")
+                            }
+                        }
+                    } else {
+                        print("FUCK!!!")
+                    }
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
 }

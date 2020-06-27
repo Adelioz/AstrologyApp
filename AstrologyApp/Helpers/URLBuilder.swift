@@ -14,8 +14,7 @@ class URLBuilder {
     
     func buildURL(city: String) -> URL? {
         
-        var urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(city)&types=(cities)&language=ru&key=\(apiKey)"
-        
+       
         var urlComp = URLComponents()
         
         urlComp.scheme = "https"
@@ -26,6 +25,19 @@ class URLBuilder {
         return urlComp.url
         
         
+    }
+    
+    func buildGetURL(city: String) -> URL? {
+        
+        
+        var urlComp = URLComponents()
+        
+        urlComp.scheme = "https"
+        urlComp.host = "maps.googleapis.com"
+        urlComp.path = "/maps/api/place/textsearch/json"
+        urlComp.queryItems = [URLQueryItem(name: "query", value: city), URLQueryItem(name: "key", value: apiKey)]
+        
+        return urlComp.url
     }
     
 }

@@ -16,13 +16,15 @@ struct MUser {
     var email: String
     var uid: String
     var sex: String = ""
+    var geo: GeoPoint
     
-    init(name: String, birthTimestamp: String, email: String, uid: String, birthPlace: String) {
+    init(name: String, birthTimestamp: String, email: String, uid: String, birthPlace: String, geo: GeoPoint) {
         self.name = name
         self.birthTimestamp = birthTimestamp
         self.email = email
         self.uid = uid
         self.birthPlace = birthPlace
+        self.geo = geo
     }
     
     init?(document: DocumentSnapshot) {
@@ -32,7 +34,8 @@ struct MUser {
               let email = data["email"] as? String,
               let birthTimestamp = data["birthTimestamp"] as? String,
               let birthPlace = data["birthPlace"] as? String,
-              let sex = data["sex"] as? String else { return nil }
+              let sex = data["sex"] as? String,
+              let geo = data["geo"] as? GeoPoint else { return nil }
         
         self.name = name
         self.uid = uid
@@ -40,16 +43,18 @@ struct MUser {
         self.birthTimestamp = birthTimestamp
         self.birthPlace = birthPlace
         self.sex = sex
-        
+        self.geo = geo
     }
     
     var representation: [String: Any] {
-        var rep = ["name": name]
+        var rep = [String: Any]()
+        rep["name"] = name
         rep["birthPlace"] = birthPlace
         rep["birthTimestamp"] = birthTimestamp
         rep["email"] = email
         rep["uid"] = uid
         rep["sex"] = sex
+        rep["geo"] = geo
         return rep
     }
     

@@ -8,11 +8,18 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+
 
 class SwipeViewController: UIViewController, UIScrollViewDelegate {
+    
+    
 
     private let currentUser: User
-
+    private var geoPoint: GeoPoint?// = nil
+    let geoVC = PlaceChooseViewController()
+    
+    
     init(currentUser: User) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
@@ -22,6 +29,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +39,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         setupAllViews()
         setupGesture()
         placeTF.delegate = self
+        geoVC.geoSendDelegate = self
     }
     
     
@@ -274,7 +284,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
                                                             email: currentUser.email!,
                                                             name: nameTF.text,
                                                             birthPlace: placeTF.text,
-                                                            birthTimestamp: formFromPickersToTimestamp(date: datePicker.date, time: timePicker.date)) { (result) in
+                                                            birthTimestamp: formFromPickersToTimestamp(date: datePicker.date, time: timePicker.date),
+                                                            geo: geoPoint) { (result) in
                                                                 
                                                                 switch result {
                                                                     
@@ -371,6 +382,19 @@ extension SwipeViewController {
 
 extension SwipeViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        show(PlaceChooseViewController(), sender: nil)
+        show(geoVC, sender: nil)
     }
+}
+
+extension SwipeViewController: GeoPointSendDelegate {
+    func setGeo(city: String, geo: GeoPoint) {
+        placeTF.text = city
+        geoPoint = geo
+    }
+    
+//    func setGeo(city: String, ge) {
+//        placeTF.text = city
+//    }
+    
+    
 }
