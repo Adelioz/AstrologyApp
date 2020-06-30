@@ -2,55 +2,102 @@
 //  MainMenuViewController.swift
 //  AstrologyApp
 //
-//  Created by Адель Рахимов on 19.06.2020.
+//  Created by Адель Рахимов on 29.06.2020.
 //  Copyright © 2020 Адель Рахимов. All rights reserved.
 //
 
 import UIKit
-import FirebaseAuth
 
 class MainMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        view.addSubview(label)
+//        label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//        label.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+//        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        
         view.backgroundColor = .white
-        setup()
+        navigationItem.title = "Main"
+        setupView()
     }
     
-    let logOutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("LOG OUT", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        button.setTitleColor(.gray, for: .normal)
-        button.addTarget(self, action: #selector(logOutPressed), for: .touchUpInside)
+
+    let label: UILabel = {
+        let label = UILabel()
+        label.text = "Main"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let compButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Совместимость по знаку зодиака", for: .normal)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(UIColor(red: 96/255, green: 201/255, blue: 251/255, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 247/255, green: 252/255, blue: 255/255, alpha: 1)
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        //button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
         return button
     }()
     
-    @objc func logOutPressed() {
-        let ac = UIAlertController(title: nil, message: "Вы точно хотите выйти?", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        ac.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { (_) in
-            do {
-                try Auth.auth().signOut()
-                UIApplication.shared.keyWindow?.rootViewController = RegistrationViewController()
-            } catch {
-                print("Ошибка при выходе: \(error.localizedDescription)")
-            }
-        }))
-        present(ac, animated: true)
-    }
+    let natalButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Расчет натальной карты", for: .normal)
+        button.setTitleColor(UIColor(red: 253/255, green: 156/255, blue: 50/255, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 255/255, green: 249/255, blue: 242/255, alpha: 1)
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        //button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
+        return button
+    }()
     
+    let numberButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Нумерологический прогноз", for: .normal)
+        button.setTitleColor(UIColor(red: 96/255, green: 97/255, blue: 212/255, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 253/255, alpha: 1)
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        //button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
+        return button
+    }()
     
-    func setup() {
-        view.addSubview(logOutButton)
-        logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logOutButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        logOutButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        logOutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    func setupView() {
+        let buttonsStackView = UIStackView(arrangedSubviews: [compButton, natalButton, numberButton])
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsStackView.distribution = .fillEqually
+        buttonsStackView.axis = .vertical
+        buttonsStackView.spacing = 20
+        
+        view.addSubview(buttonsStackView)
+        buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        buttonsStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        buttonsStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        
+                
         
     }
-
     
-
 }

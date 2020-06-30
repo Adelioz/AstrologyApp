@@ -23,11 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        let helloViewController = RegistrationViewController()
         
-        window?.rootViewController = SwipeViewController(currentUser: Auth.auth().currentUser!)
         
+        //window?.rootViewController = SwipeViewController(currentUser: Auth.auth().currentUser!)
+        window?.rootViewController = MainTabBarController()
+        
+        //let helloViewController = RegistrationViewController()
         //window?.rootViewController = helloViewController
+        
 //        print(Auth.auth().currentUser?.email)
 //        if let user = Auth.auth().currentUser {
 //            FirestoreService.shared.getUserData(user: user) { (result) in

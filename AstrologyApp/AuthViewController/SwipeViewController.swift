@@ -154,15 +154,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    let placeTFd: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .yellow
-        tf.font = UIFont.boldSystemFont(ofSize: 30)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
-    }()
+
     
     let placeTF: UIButton = {
         let button = UIButton()
@@ -313,7 +305,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
                                                                     
                                                                 case .success(let muser):
                                                                     self.showAlert(with: "Успешно!", and: "Приятного пользования", completion: {
-                                                                        self.present(MainMenuViewController(), animated: true)
+                                                                        self.present(MainTabBarController(), animated: true)
                                                                     })
                                                                     print(muser)
                                                                 case .failure(let error):

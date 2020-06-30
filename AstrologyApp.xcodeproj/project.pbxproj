@@ -8,36 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		C441491BE942C7D48702E5BE /* Pods_AstrologyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */; };
-		FC101837249D21520073BA80 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101836249D21520073BA80 /* MainMenuViewController.swift */; };
 		FC10183A249D218D0073BA80 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101839249D218D0073BA80 /* MUser.swift */; };
 		FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */; };
 		FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101840249D49DB0073BA80 /* RegistrationViewController.swift */; };
 		FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */; };
 		FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */; };
+		FC52FE1724AA002B00CCD067 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1624AA002B00CCD067 /* MainTabBarController.swift */; };
+		FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */; };
+		FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */; };
+		FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1E24AA007F00CCD067 /* TestViewController.swift */; };
+		FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE2024AA00A500CCD067 /* MoreViewController.swift */; };
 		FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */; };
 		FC6E29742498D91100D2BFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29732498D91100D2BFE3 /* Assets.xcassets */; };
 		FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */; };
 		FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */; };
 		FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29902498EE9100D2BFE3 /* .gitignore */; };
 		FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CF6EA24A342B900833683 /* DateExtension.swift */; };
+		FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */; };
 		FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BA249E231500110B2E /* LoginViewController.swift */; };
 		FCA752BF249E283A00110B2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BE249E283A00110B2E /* AuthService.swift */; };
 		FCA752C1249E314D00110B2E /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C0249E314D00110B2E /* Validators.swift */; };
 		FCA752C4249E320100110B2E /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C3249E320100110B2E /* AuthError.swift */; };
 		FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C5249E3DE400110B2E /* FirestoreService.swift */; };
 		FCA752C8249E408200110B2E /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C7249E408200110B2E /* UserError.swift */; };
+		FCBF39F024AA89D5005C4951 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39EF24AA89D4005C4951 /* LineButton.swift */; };
+		FCBF39F324AA8FCD005C4951 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */; };
+		FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */; };
+		FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */; };
+		FCBF39F924AA9781005C4951 /* LineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F824AA9781005C4951 /* LineInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		894EE3E57923D03F44309D47 /* Pods-AstrologyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9313DA00CCF5173038568A46 /* Pods-AstrologyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.release.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.release.xcconfig"; sourceTree = "<group>"; };
-		FC101836249D21520073BA80 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		FC101839249D218D0073BA80 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC101840249D49DB0073BA80 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceChooseViewController.swift; sourceTree = "<group>"; };
 		FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		FC52FE1624AA002B00CCD067 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = ../MainMenuViewController.swift; sourceTree = "<group>"; };
+		FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HoroscopeViewController.swift; path = ../HoroscopeViewController.swift; sourceTree = "<group>"; };
+		FC52FE1E24AA007F00CCD067 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
+		FC52FE2024AA00A500CCD067 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
 		FC6E29692498D90F00D2BFE3 /* AstrologyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstrologyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6E29732498D91100D2BFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,12 +60,18 @@
 		FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		FC6E29902498EE9100D2BFE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FC9CF6EA24A342B900833683 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		FCA752BA249E231500110B2E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCA752BE249E283A00110B2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FCA752C0249E314D00110B2E /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		FCA752C3249E320100110B2E /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		FCA752C5249E3DE400110B2E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		FCA752C7249E408200110B2E /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		FCBF39EF24AA89D4005C4951 /* LineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
+		FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
+		FCBF39F824AA9781005C4951 /* LineInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +106,8 @@
 		FC101835249D212F0073BA80 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FC101836249D21520073BA80 /* MainMenuViewController.swift */,
+				FC52FE1624AA002B00CCD067 /* MainTabBarController.swift */,
+				FC52FE2224AA00AB00CCD067 /* Main Subviews */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -97,6 +118,18 @@
 				FC101839249D218D0073BA80 /* MUser.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FC52FE2224AA00AB00CCD067 /* Main Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */,
+				FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */,
+				FC52FE1E24AA007F00CCD067 /* TestViewController.swift */,
+				FC52FE2024AA00A500CCD067 /* MoreViewController.swift */,
+				FCBF39F124AA8FB5005C4951 /* MoreVCs */,
+			);
+			path = "Main Subviews";
 			sourceTree = "<group>";
 		};
 		FC6E29602498D90F00D2BFE3 = {
@@ -121,6 +154,7 @@
 		FC6E296B2498D90F00D2BFE3 /* AstrologyApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCBF39EE24AA89C5005C4951 /* Extensions */,
 				FCA752C2249E31EF00110B2E /* Helpers */,
 				FCA752BD249E26D600110B2E /* Service */,
 				FC101838249D21790073BA80 /* Model */,
@@ -151,6 +185,7 @@
 			children = (
 				FCA752BE249E283A00110B2E /* AuthService.swift */,
 				FCA752C5249E3DE400110B2E /* FirestoreService.swift */,
+				FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -165,6 +200,25 @@
 				FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FCBF39EE24AA89C5005C4951 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCBF39EF24AA89D4005C4951 /* LineButton.swift */,
+				FCBF39F824AA9781005C4951 /* LineInfoView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCBF39F124AA8FB5005C4951 /* MoreVCs */ = {
+			isa = PBXGroup;
+			children = (
+				FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */,
+				FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */,
+				FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */,
+			);
+			path = MoreVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,19 +337,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBF39F924AA9781005C4951 /* LineInfoView.swift in Sources */,
 				FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */,
 				FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */,
+				FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */,
+				FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */,
+				FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */,
 				FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */,
 				FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */,
 				FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */,
 				FC10183A249D218D0073BA80 /* MUser.swift in Sources */,
-				FC101837249D21520073BA80 /* MainMenuViewController.swift in Sources */,
+				FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */,
 				FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */,
+				FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */,
+				FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */,
 				FCA752C8249E408200110B2E /* UserError.swift in Sources */,
+				FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */,
 				FCA752C1249E314D00110B2E /* Validators.swift in Sources */,
 				FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */,
+				FC52FE1724AA002B00CCD067 /* MainTabBarController.swift in Sources */,
 				FCA752C4249E320100110B2E /* AuthError.swift in Sources */,
 				FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */,
+				FCBF39F324AA8FCD005C4951 /* UserInfoViewController.swift in Sources */,
+				FCBF39F024AA89D5005C4951 /* LineButton.swift in Sources */,
 				FCA752BF249E283A00110B2E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

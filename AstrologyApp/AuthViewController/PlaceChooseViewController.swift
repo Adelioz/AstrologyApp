@@ -203,7 +203,8 @@ extension PlaceChooseViewController {
                 }
                 
             } else {
-                print(error?.localizedDescription)
+                guard let error = error else { return }
+                print(error.localizedDescription)
             }
             
             DispatchQueue.main.async {
@@ -220,7 +221,7 @@ extension PlaceChooseViewController {
         let urlRequest = urlBuilder.buildGetURL(city: city)
         guard let url = urlRequest else { print("HUI"); return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
+            if let _ = error {
                 print("PIZDA")
                 return
             }
