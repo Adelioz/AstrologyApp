@@ -94,9 +94,7 @@ class PlaceChooseViewController: UIView {
             if complete {
                 self.removeFromSuperview()
             }
-        }
-        
-        print("pizdariki")
+        }        
     }
     
     @objc func animateIn() {

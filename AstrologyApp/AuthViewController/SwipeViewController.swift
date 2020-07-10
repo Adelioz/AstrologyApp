@@ -115,23 +115,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         setupTimeView()
     }
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Как вас зовут?"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let nameTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .yellow
-        tf.font = UIFont.boldSystemFont(ofSize: 30)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
-    }()
+    let nameLabel = SwipeLabel(with: "Как вас зовут?")
+    let nameTF = SwipeTextField(color: .yellow)
     
     func setupNameView() {
         nameView.addSubview(nameLabel)
@@ -146,31 +131,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         nameTF.leadingAnchor.constraint(equalTo: nameView.leadingAnchor, constant: 50).isActive = true
     }
     
-    let placeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Место рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    
-    let placeTF: UIButton = {
-        let button = UIButton()
-        button.setTitle("", for: .normal)
-        button.contentHorizontalAlignment = .center
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .yellow
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 0.5
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
-        return button
-    }()
-    
+    let placeLabel = SwipeLabel(with: "Место рождения")
+    let placeTF = SwipeButton(color: .yellow)
     @objc func showGeoVC() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
             let geo = PlaceChooseViewController()
@@ -180,6 +142,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func setupPlaceView() {
+        
         placeView.addSubview(placeLabel)
         placeLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         placeLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
@@ -190,25 +153,12 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         placeTF.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
         placeTF.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 100).isActive = true
         placeTF.leadingAnchor.constraint(equalTo: placeView.leadingAnchor, constant: 50).isActive = true
+        placeTF.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
         
     }
     
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Дата рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .date
-        picker.locale = Locale(identifier: "ru_RU")
-        return picker
-    }()
+    let dateLabel = SwipeLabel(with: "Дата рождения")
+    let datePicker = SwipeDatePicker(mode: .date)
     
     func setupDateView() {
         dateView.addSubview(dateLabel)
@@ -221,22 +171,8 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
         datePicker.centerXAnchor.constraint(equalTo: dateView.centerXAnchor).isActive = true
     }
     
-    let timeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Время рождения"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let timePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .time
-        picker.locale = Locale(identifier: "ru_RU")
-        return picker
-    }()
+    let timeLabel = SwipeLabel(with: "Время рождения")
+    let timePicker = SwipeDatePicker(mode: .time)
     
     func setupTimeView() {
         timeView.addSubview(timeLabel)
@@ -299,11 +235,17 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
                                                             name: nameTF.text,
                                                             birthPlace: placeTF.titleLabel!.text,
                                                             birthTimestamp: formFromPickersToTimestamp(date: datePicker.date, time: timePicker.date),
-                                                            geo: geoPoint) { (result) in
+                                                            geo: geoPoint, isEdited: false) { (result) in
                                                                 
                                                                 switch result {
                                                                     
                                                                 case .success(let muser):
+                                                                    UserSettings.shared.saveProfile(name: self.nameTF.text!,
+                                                                                                    birthPlace: self.placeTF.titleLabel!.text!,
+                                                                                                    birthTimestamp: self.formFromPickersToTimestamp(date: self.datePicker.date, time: self.timePicker.date),
+                                                                                                    sex: nil,
+                                                                                                    mail: self.currentUser.email!,
+                                                                                                    isEdited: false)
                                                                     self.showAlert(with: "Успешно!", and: "Приятного пользования", completion: {
                                                                         self.present(MainTabBarController(), animated: true)
                                                                     })
@@ -312,22 +254,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate {
                                                                     self.showAlert(with: "Ошибка!", and: error.localizedDescription)
                                                                 }
                     }
-//                    FirestoreService.shared.saveProfileWith(id: currentUser.uid,
-//                                                            email: currentUser.email!,
-//                                                            name: nameTF.text,
-//                                                            birthDate: String(Int(datePicker.date.timeIntervalSince1970)),
-//                                                            birthTime: String(Int(timePicker.date.timeIntervalSince1970))) { (result) in
-//                                                                switch result {
-//
-//                                                                case .success(let muser):
-//                                                                    self.showAlert(with: "Успешно!", and: "Приятного пользования", completion: {
-//                                                                        self.present(MainMenuViewController(), animated: true)
-//                                                                    })
-//                                                                    print(muser)
-//                                                                case .failure(let error):
-//                                                                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
-//                                                                }
-//        }
+                    
                     
                 }
         

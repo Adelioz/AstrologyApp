@@ -23,7 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        
+
+        if let user = Auth.auth().currentUser {
+            FirestoreService.shared.getUserData(user: user) { (result) in
+                switch result {
+
+                case .success(let muser):
+                    UserSettings.shared.saveProfile(name: muser.name,
+                                                    birthPlace: muser.birthPlace,
+                                                    birthTimestamp: muser.birthTimestamp,
+                                                    sex: muser.sex,
+                                                    mail: muser.email,
+                                                    isEdited: muser.isEdited)
+                case .failure(_):
+                    print("ВСЕ ПОШЛО ПО ПИЗДЕ")
+                }
+            }
+        }
         
         //window?.rootViewController = SwipeViewController(currentUser: Auth.auth().currentUser!)
         window?.rootViewController = MainTabBarController()

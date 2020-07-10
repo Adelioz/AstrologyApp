@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C441491BE942C7D48702E5BE /* Pods_AstrologyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */; };
+		FC0B3ACB24AE6765006E40D9 /* TextFieldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */; };
 		FC10183A249D218D0073BA80 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101839249D218D0073BA80 /* MUser.swift */; };
 		FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */; };
 		FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101840249D49DB0073BA80 /* RegistrationViewController.swift */; };
@@ -31,6 +32,10 @@
 		FCA752C4249E320100110B2E /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C3249E320100110B2E /* AuthError.swift */; };
 		FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C5249E3DE400110B2E /* FirestoreService.swift */; };
 		FCA752C8249E408200110B2E /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C7249E408200110B2E /* UserError.swift */; };
+		FCB2433B24ADD239006587CA /* SwipeLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433A24ADD239006587CA /* SwipeLabelExtension.swift */; };
+		FCB2433E24ADD49B006587CA /* SwipeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433D24ADD49B006587CA /* SwipeTextField.swift */; };
+		FCB2434024ADD885006587CA /* SwipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433F24ADD885006587CA /* SwipeButton.swift */; };
+		FCB2434224ADE45C006587CA /* SwipeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2434124ADE45C006587CA /* SwipeDatePicker.swift */; };
 		FCBF39F024AA89D5005C4951 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39EF24AA89D4005C4951 /* LineButton.swift */; };
 		FCBF39F324AA8FCD005C4951 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */; };
 		FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */; };
@@ -42,6 +47,7 @@
 		537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		894EE3E57923D03F44309D47 /* Pods-AstrologyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9313DA00CCF5173038568A46 /* Pods-AstrologyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.release.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.release.xcconfig"; sourceTree = "<group>"; };
+		FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInfo.swift; sourceTree = "<group>"; };
 		FC101839249D218D0073BA80 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC101840249D49DB0073BA80 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 		FCA752C3249E320100110B2E /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		FCA752C5249E3DE400110B2E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		FCA752C7249E408200110B2E /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		FCB2433A24ADD239006587CA /* SwipeLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeLabelExtension.swift; sourceTree = "<group>"; };
+		FCB2433D24ADD49B006587CA /* SwipeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTextField.swift; sourceTree = "<group>"; };
+		FCB2433F24ADD885006587CA /* SwipeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButton.swift; sourceTree = "<group>"; };
+		FCB2434124ADE45C006587CA /* SwipeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDatePicker.swift; sourceTree = "<group>"; };
 		FCBF39EF24AA89D4005C4951 /* LineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
 		FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				FCA752C0249E314D00110B2E /* Validators.swift */,
-				FC9CF6EA24A342B900833683 /* DateExtension.swift */,
 				FCA752C3249E320100110B2E /* AuthError.swift */,
 				FCA752C7249E408200110B2E /* UserError.swift */,
 				FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */,
@@ -202,11 +211,25 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FCB2433C24ADD479006587CA /* SwipeView Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCB2433A24ADD239006587CA /* SwipeLabelExtension.swift */,
+				FCB2433F24ADD885006587CA /* SwipeButton.swift */,
+				FCB2433D24ADD49B006587CA /* SwipeTextField.swift */,
+				FCB2434124ADE45C006587CA /* SwipeDatePicker.swift */,
+			);
+			path = "SwipeView Extensions";
+			sourceTree = "<group>";
+		};
 		FCBF39EE24AA89C5005C4951 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FCBF39EF24AA89D4005C4951 /* LineButton.swift */,
 				FCBF39F824AA9781005C4951 /* LineInfoView.swift */,
+				FC9CF6EA24A342B900833683 /* DateExtension.swift */,
+				FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */,
+				FCB2433C24ADD479006587CA /* SwipeView Extensions */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,15 +364,20 @@
 				FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */,
 				FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */,
 				FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */,
+				FCB2434024ADD885006587CA /* SwipeButton.swift in Sources */,
 				FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */,
 				FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */,
 				FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */,
+				FCB2434224ADE45C006587CA /* SwipeDatePicker.swift in Sources */,
+				FC0B3ACB24AE6765006E40D9 /* TextFieldInfo.swift in Sources */,
 				FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */,
 				FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */,
 				FC10183A249D218D0073BA80 /* MUser.swift in Sources */,
 				FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */,
 				FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */,
+				FCB2433E24ADD49B006587CA /* SwipeTextField.swift in Sources */,
 				FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */,
+				FCB2433B24ADD239006587CA /* SwipeLabelExtension.swift in Sources */,
 				FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */,
 				FCA752C8249E408200110B2E /* UserError.swift in Sources */,
 				FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */,

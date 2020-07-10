@@ -60,27 +60,33 @@ class LoginViewController: UIViewController {
     }()
     
     @objc func loginPressed() {
-//        AuthService.shared.login(email: loginTextField.text,
-//                                 password: passTextField.text) { (result) in
-//                                    switch result {
-//                                        
-//                                    case .success(let user):
-//                                        self.showAlert(with: "Успешно!", and: "Вы зарегистрированы", completion: {
-//                                            FirestoreService.shared.getUserData(user: user, completion: { (result) in
-//                                                switch result {
-//                                                    
-//                                                case .success(let muser):
-//                                                    self.present(MainMenuViewController(), animated: true)
-//                                                case .failure(let error):
-//                                                    self.present(SwipeViewController(currentUser: user), animated: true)
-//                                                }
-//                                            })
-//                                            
-//                                        })
-//                                    case .failure(let error):
-//                                        self.showAlert(with: "Ошибка", and: error.localizedDescription)
-//                                    }
-//        }
+        AuthService.shared.login(email: loginTextField.text,
+                                 password: passTextField.text) { (result) in
+                                    switch result {
+                                        
+                                    case .success(let user):
+                                        self.showAlert(with: "Успешно!", and: "Вы зарегистрированы", completion: {
+                                            FirestoreService.shared.getUserData(user: user, completion: { (result) in
+                                                switch result {
+                                                    
+                                                case .success(let muser):
+                                                    UserSettings.shared.saveProfile(name: muser.name,
+                                                                                    birthPlace: muser.birthPlace,
+                                                                                    birthTimestamp: muser.birthTimestamp,
+                                                                                    sex: muser.sex,
+                                                                                    mail: muser.email,
+                                                                                    isEdited: muser.isEdited)
+                                                    self.present(MainMenuViewController(), animated: true)
+                                                case .failure(_):
+                                                    self.present(SwipeViewController(currentUser: user), animated: true)
+                                                }
+                                            })
+                                            
+                                        })
+                                    case .failure(let error):
+                                        self.showAlert(with: "Ошибка", and: error.localizedDescription)
+                                    }
+        }
     }
     
     let toRegisterButton: UIButton = {

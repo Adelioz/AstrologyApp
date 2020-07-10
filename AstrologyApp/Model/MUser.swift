@@ -17,14 +17,17 @@ struct MUser {
     var uid: String
     var sex: String = ""
     var geo: GeoPoint
+    var isEdited: Bool = false
     
-    init(name: String, birthTimestamp: String, email: String, uid: String, birthPlace: String, geo: GeoPoint) {
+    init(name: String, birthTimestamp: String, email: String, uid: String, birthPlace: String, geo: GeoPoint, isEdited: Bool) {
         self.name = name
         self.birthTimestamp = birthTimestamp
         self.email = email
         self.uid = uid
         self.birthPlace = birthPlace
         self.geo = geo
+        self.isEdited = isEdited
+        
     }
     
     init?(document: DocumentSnapshot) {
@@ -35,7 +38,8 @@ struct MUser {
               let birthTimestamp = data["birthTimestamp"] as? String,
               let birthPlace = data["birthPlace"] as? String,
               let sex = data["sex"] as? String,
-              let geo = data["geo"] as? GeoPoint else { return nil }
+              let geo = data["geo"] as? GeoPoint,
+              let isEdited = data["isEdited"] as? Bool else { return nil }
         
         self.name = name
         self.uid = uid
@@ -44,6 +48,7 @@ struct MUser {
         self.birthPlace = birthPlace
         self.sex = sex
         self.geo = geo
+        self.isEdited = isEdited
     }
     
     var representation: [String: Any] {
@@ -55,6 +60,7 @@ struct MUser {
         rep["uid"] = uid
         rep["sex"] = sex
         rep["geo"] = geo
+        rep["isEdited"] = isEdited
         return rep
     }
     

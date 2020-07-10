@@ -20,7 +20,7 @@ class FirestoreService {
         return db.collection("users")
     }
     
-    func saveProfileWith(uid: String, email: String, name: String?, birthPlace: String?, birthTimestamp: String?, geo: GeoPoint?, completion: @escaping (Result<MUser, Error>) -> Void) {
+    func saveProfileWith(uid: String, email: String, name: String?, birthPlace: String?, birthTimestamp: String?, geo: GeoPoint?, isEdited: Bool, completion: @escaping (Result<MUser, Error>) -> Void) {
         
         guard Validators.isFilled(name: name, birthPlace: birthPlace, birthTimestamp: birthTimestamp) else {
             completion(.failure(UserError.notFilled))
@@ -32,7 +32,8 @@ class FirestoreService {
                           email: email,
                           uid: uid,
                           birthPlace: birthPlace!,
-                          geo: geo!)
+                          geo: geo!,
+                          isEdited: isEdited)
         
         self.usersRef.document(muser.uid).setData(muser.representation) { (error) in
             if let error = error {
