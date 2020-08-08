@@ -13,49 +13,70 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        setupBackgroundImage()
         setupView()
         setupGesture()
+    }
+    
+    func setupBackgroundImage() {
+        let image = UIImageView()
+        image.image = UIImage(named: "authorization_background")
+        image.contentMode = .scaleAspectFill
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(image)
+        image.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        image.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        image.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        image.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
 
     let loginLabel: UILabel = {
         let label = UILabel()
-        label.text = "Вход"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.text = "Авторизация"
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
+        label.textAlignment = .left
+        label.font = UIFont(name: "GothamProNarrow-Bold", size: 40)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let loginTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .yellow
-        tf.placeholder = "Введите адрес вашей почты"
-        tf.font = UIFont.boldSystemFont(ofSize: 20)
+    let backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        view.layer.cornerRadius = 7
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let loginTextField: LineTextField = {
+        let tf = LineTextField(titleText: "E-mail")
+        tf.backgroundColor = .clear
+        tf.font = UIFont(name: "Lato-Bold", size: 14)
+        tf.textColor = .white
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
-    let passTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .yellow
-        tf.placeholder = "Введите пароль"
-        tf.font = UIFont.boldSystemFont(ofSize: 20)
+    let passTextField: LineTextField = {
+        let tf = LineTextField(titleText: "Пароль")
+        tf.backgroundColor = .clear
+        tf.font = UIFont(name: "Lato-Bold", size: 14)
+        tf.textColor = .white
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Далее", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        button.setTitleColor(.red, for: .normal)
+        button.setTitle("Вход", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 20)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .gray
         return button
     }()
     
@@ -65,7 +86,7 @@ class LoginViewController: UIViewController {
                                     switch result {
                                         
                                     case .success(let user):
-                                        self.showAlert(with: "Успешно!", and: "Вы зарегистрированы", completion: {
+                                        self.showAlert(with: "Успешно!", and: "Вы авторизированы", completion: {
                                             FirestoreService.shared.getUserData(user: user, completion: { (result) in
                                                 switch result {
                                                     
@@ -76,9 +97,15 @@ class LoginViewController: UIViewController {
                                                                                     sex: muser.sex,
                                                                                     mail: muser.email,
                                                                                     isEdited: muser.isEdited)
-                                                    self.present(MainMenuViewController(), animated: true)
+                                                    let mainTBC = MainTabBarController()
+                                                    mainTBC.modalTransitionStyle = .crossDissolve
+                                                    mainTBC.modalPresentationStyle = .overCurrentContext
+                                                    self.present(mainTBC, animated: true)
                                                 case .failure(_):
-                                                    self.present(SwipeViewController(currentUser: user), animated: true)
+                                                    let swipeVC = SwipeViewController(currentUser: user)
+                                                    swipeVC.modalTransitionStyle = .crossDissolve
+                                                    swipeVC.modalPresentationStyle = .overCurrentContext
+                                                    self.present(swipeVC, animated: true)
                                                 }
                                             })
                                             
@@ -92,11 +119,10 @@ class LoginViewController: UIViewController {
     let toRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Перейти к регистрации", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)//boldSystemFont(ofSize: 10)
-        button.setTitleColor(.blue, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 11)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(toRegisterButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     
@@ -105,34 +131,60 @@ class LoginViewController: UIViewController {
     }
     
     func setupView() {
+        
+        view.addSubview(backgroundView)
+        backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backgroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 400/812).isActive = true
+        backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 335/375).isActive = true
+        
+        let textFieldsStackView = UIStackView(arrangedSubviews: [loginTextField, passTextField])
+        textFieldsStackView.translatesAutoresizingMaskIntoConstraints = false
+        textFieldsStackView.axis = .vertical
+        textFieldsStackView.distribution = .fillEqually
+        textFieldsStackView.spacing = 30
+        
+        backgroundView.addSubview(textFieldsStackView)
+        textFieldsStackView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 270/335).isActive = true
+        textFieldsStackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 150/399).isActive = true
+        textFieldsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
+        textFieldsStackView.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: view.frame.height * 68/812).isActive = true
+        //textFieldsStackView.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 100).isActive = true
+        
         view.addSubview(loginLabel)
-        loginLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        loginLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        loginLabel.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        loginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.width * 40/375).isActive = true
+        loginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.frame.width * 58/375)).isActive = true
+        loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 100/812).isActive = true
         
-        view.addSubview(loginTextField)
-        loginTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        loginTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        loginTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 100).isActive = true
-        loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        
-        view.addSubview(passTextField)
-        passTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        passTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
-        passTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 30).isActive = true
-        passTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+//        view.addSubview(loginTextField)
+//        loginTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        loginTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
+//        loginTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 100).isActive = true
+//        loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+//
+//        view.addSubview(passTextField)
+//        passTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        passTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
+//        passTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 30).isActive = true
+//        passTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         
         view.addSubview(loginButton)
-        loginButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        loginButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        loginButton.topAnchor.constraint(equalTo: passTextField.bottomAnchor, constant: 100).isActive = true
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.frame = CGRect(x: 0, y: 0, width: view.frame.width * 293/375, height: view.frame.height * 56/812)
+        loginButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: view.frame.height * 56/812).isActive = true
+        print("kjnckwn     \(60 / view.frame.height)")
+        print("jncekjnek   \(view.frame.height) efkenfekj    \(view.layer)")
+        loginButton.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 293/335).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -30).isActive = true
+        loginButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1))
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.clipsToBounds = true
         
         view.addSubview(toRegisterButton)
         toRegisterButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        toRegisterButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        toRegisterButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
-        toRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        toRegisterButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 20).isActive = true
+        toRegisterButton.trailingAnchor.constraint(equalTo: textFieldsStackView.trailingAnchor).isActive = true
     }
 
 }

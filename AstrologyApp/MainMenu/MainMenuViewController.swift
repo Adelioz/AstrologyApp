@@ -47,9 +47,14 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.lightGray.cgColor
-        //button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showSovmVC), for: .touchUpInside)
         return button
     }()
+    
+    @objc func showSovmVC() {
+        navigationController?.pushViewController(SovmestimostVC(), animated: true)
+        
+    }
     
     let natalButton: UIButton = {
         let button = UIButton()
@@ -63,9 +68,13 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.lightGray.cgColor
-        //button.addTarget(self, action: #selector(showGeoVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showNatalVC), for: .touchUpInside)
         return button
     }()
+    
+    @objc func showNatalVC() {
+        navigationController?.pushViewController(NatalCardVC(), animated: true)
+    }
     
     let numberButton: UIButton = {
         let button = UIButton()

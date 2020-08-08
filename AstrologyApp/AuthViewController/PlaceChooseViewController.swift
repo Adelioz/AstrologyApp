@@ -29,7 +29,7 @@ class PlaceChooseViewController: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -76,9 +76,9 @@ class PlaceChooseViewController: UIView {
         searchBar.delegate = self
         
         container.addSubview(searchBar)
-        searchBar.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
+        searchBar.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10).isActive = true
         searchBar.searchBarStyle = .minimal
         searchBar.becomeFirstResponder()
     }
@@ -116,7 +116,7 @@ class PlaceChooseViewController: UIView {
         container.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         //container.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         container.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        container.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.95).isActive = true
+        container.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         container.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9).isActive = true
     }
     

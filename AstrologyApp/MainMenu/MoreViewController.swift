@@ -32,7 +32,7 @@ class MoreViewController: UIViewController {
     }
     
     let userImage: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "user"))
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

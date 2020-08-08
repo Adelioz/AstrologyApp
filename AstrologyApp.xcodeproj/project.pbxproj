@@ -14,16 +14,32 @@
 		FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101840249D49DB0073BA80 /* RegistrationViewController.swift */; };
 		FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */; };
 		FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */; };
+		FC3D602724CF028A0083DC0C /* SovmestimostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */; };
+		FC48956624D1EB4F002DDE8E /* LilitaOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC48956524D1EB4E002DDE8E /* LilitaOne.ttf */; };
+		FC48956824D1ED50002DDE8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC48956724D1ED50002DDE8E /* LaunchScreen.storyboard */; };
+		FC48956D24D1FD30002DDE8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC48956C24D1FD30002DDE8E /* Assets.xcassets */; };
+		FC4AE3C124D035B700FE14F7 /* SoupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3C024D035B700FE14F7 /* SoupHelper.swift */; };
+		FC4AE3C324D035DB00FE14F7 /* SovmestimostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3C224D035DB00FE14F7 /* SovmestimostModel.swift */; };
+		FC4AE3C524D038AD00FE14F7 /* SovmestimostSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3C424D038AD00FE14F7 /* SovmestimostSecondVC.swift */; };
+		FC4AE3C824D03B7700FE14F7 /* HoroLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3C724D03B7700FE14F7 /* HoroLabel.swift */; };
+		FC4AE3CC24D0400800FE14F7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3CB24D0400800FE14F7 /* StringExtension.swift */; };
+		FC4AE3D024D0409E00FE14F7 /* NatalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3CF24D0409E00FE14F7 /* NatalModel.swift */; };
+		FC4AE3D224D040C900FE14F7 /* AstroStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3D124D040C900FE14F7 /* AstroStrings.swift */; };
+		FC4AE3D424D0418900FE14F7 /* NatalCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3D324D0418900FE14F7 /* NatalCardVC.swift */; };
+		FC4AE3D624D041F000FE14F7 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AE3D524D041F000FE14F7 /* Parser.swift */; };
 		FC52FE1724AA002B00CCD067 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1624AA002B00CCD067 /* MainTabBarController.swift */; };
 		FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */; };
 		FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */; };
 		FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE1E24AA007F00CCD067 /* TestViewController.swift */; };
 		FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC52FE2024AA00A500CCD067 /* MoreViewController.swift */; };
 		FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */; };
-		FC6E29742498D91100D2BFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29732498D91100D2BFE3 /* Assets.xcassets */; };
-		FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */; };
 		FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */; };
 		FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29902498EE9100D2BFE3 /* .gitignore */; };
+		FC7D4C6624D21BAC000E6756 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */; };
+		FC7D4C6824D235B2000E6756 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */; };
+		FC7D4C6A24D2380D000E6756 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */; };
+		FC804B1F24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC804B1E24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf */; };
+		FC804B2124D7130300C7B91C /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC804B2024D7130300C7B91C /* LineTextField.swift */; };
 		FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CF6EA24A342B900833683 /* DateExtension.swift */; };
 		FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */; };
 		FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BA249E231500110B2E /* LoginViewController.swift */; };
@@ -53,6 +69,19 @@
 		FC101840249D49DB0073BA80 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceChooseViewController.swift; sourceTree = "<group>"; };
 		FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovmestimostVC.swift; sourceTree = "<group>"; };
+		FC48956524D1EB4E002DDE8E /* LilitaOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LilitaOne.ttf; path = ../../../../../Downloads/LilitaOne.ttf; sourceTree = "<group>"; };
+		FC48956724D1ED50002DDE8E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC48956C24D1FD30002DDE8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC4AE3C024D035B700FE14F7 /* SoupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoupHelper.swift; sourceTree = "<group>"; };
+		FC4AE3C224D035DB00FE14F7 /* SovmestimostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovmestimostModel.swift; sourceTree = "<group>"; };
+		FC4AE3C424D038AD00FE14F7 /* SovmestimostSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovmestimostSecondVC.swift; sourceTree = "<group>"; };
+		FC4AE3C724D03B7700FE14F7 /* HoroLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroLabel.swift; sourceTree = "<group>"; };
+		FC4AE3CB24D0400800FE14F7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FC4AE3CF24D0409E00FE14F7 /* NatalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalModel.swift; sourceTree = "<group>"; };
+		FC4AE3D124D040C900FE14F7 /* AstroStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroStrings.swift; sourceTree = "<group>"; };
+		FC4AE3D324D0418900FE14F7 /* NatalCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalCardVC.swift; sourceTree = "<group>"; };
+		FC4AE3D524D041F000FE14F7 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		FC52FE1624AA002B00CCD067 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = ../MainMenuViewController.swift; sourceTree = "<group>"; };
 		FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HoroscopeViewController.swift; path = ../HoroscopeViewController.swift; sourceTree = "<group>"; };
@@ -60,11 +89,14 @@
 		FC52FE2024AA00A500CCD067 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
 		FC6E29692498D90F00D2BFE3 /* AstrologyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstrologyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC6E29732498D91100D2BFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC6E29762498D91100D2BFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6E29782498D91100D2BFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		FC6E29902498EE9100D2BFE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../../Downloads/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "../../../../../Downloads/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		FC804B1E24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamProNarrow-Bold.ttf"; path = "../../../../../Downloads/GothamProNarrow-Bold.ttf"; sourceTree = "<group>"; };
+		FC804B2024D7130300C7B91C /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		FC9CF6EA24A342B900833683 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		FCA752BA249E231500110B2E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +162,98 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FC3D602324CF02040083DC0C /* MainVCs */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3C924D03C8900FE14F7 /* NatalCard */,
+				FC4AE3BD24D034F000FE14F7 /* Sovmestimost */,
+			);
+			path = MainVCs;
+			sourceTree = "<group>";
+		};
+		FC48956424D1EB28002DDE8E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FC804B1E24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf */,
+				FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */,
+				FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */,
+				FC48956524D1EB4E002DDE8E /* LilitaOne.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FC4AE3BD24D034F000FE14F7 /* Sovmestimost */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3C624D03B6A00FE14F7 /* Extensions */,
+				FC4AE3BF24D035A600FE14F7 /* Helpers */,
+				FC4AE3BE24D0359E00FE14F7 /* Model */,
+				FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */,
+				FC4AE3C424D038AD00FE14F7 /* SovmestimostSecondVC.swift */,
+			);
+			path = Sovmestimost;
+			sourceTree = "<group>";
+		};
+		FC4AE3BE24D0359E00FE14F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3C224D035DB00FE14F7 /* SovmestimostModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC4AE3BF24D035A600FE14F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3C024D035B700FE14F7 /* SoupHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FC4AE3C624D03B6A00FE14F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3C724D03B7700FE14F7 /* HoroLabel.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC4AE3C924D03C8900FE14F7 /* NatalCard */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3CE24D0409400FE14F7 /* Model */,
+				FC4AE3CD24D0402400FE14F7 /* Helpers */,
+				FC4AE3CA24D03CA800FE14F7 /* Extensions */,
+				FC4AE3D324D0418900FE14F7 /* NatalCardVC.swift */,
+			);
+			path = NatalCard;
+			sourceTree = "<group>";
+		};
+		FC4AE3CA24D03CA800FE14F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3CB24D0400800FE14F7 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC4AE3CD24D0402400FE14F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3D124D040C900FE14F7 /* AstroStrings.swift */,
+				FC4AE3D524D041F000FE14F7 /* Parser.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FC4AE3CE24D0409400FE14F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AE3CF24D0409E00FE14F7 /* NatalModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FC52FE2224AA00AB00CCD067 /* Main Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +262,7 @@
 				FC52FE1E24AA007F00CCD067 /* TestViewController.swift */,
 				FC52FE2024AA00A500CCD067 /* MoreViewController.swift */,
 				FCBF39F124AA8FB5005C4951 /* MoreVCs */,
+				FC3D602324CF02040083DC0C /* MainVCs */,
 			);
 			path = "Main Subviews";
 			sourceTree = "<group>";
@@ -171,10 +296,11 @@
 				FC101835249D212F0073BA80 /* MainMenu */,
 				FC6E298D2498E6CD00D2BFE3 /* AuthViewController */,
 				FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */,
-				FC6E29732498D91100D2BFE3 /* Assets.xcassets */,
-				FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */,
+				FC48956C24D1FD30002DDE8E /* Assets.xcassets */,
 				FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */,
+				FC48956724D1ED50002DDE8E /* LaunchScreen.storyboard */,
 				FC6E29782498D91100D2BFE3 /* Info.plist */,
+				FC48956424D1EB28002DDE8E /* Fonts */,
 			);
 			path = AstrologyApp;
 			sourceTree = "<group>";
@@ -226,10 +352,12 @@
 			isa = PBXGroup;
 			children = (
 				FCBF39EF24AA89D4005C4951 /* LineButton.swift */,
+				FC804B2024D7130300C7B91C /* LineTextField.swift */,
 				FCBF39F824AA9781005C4951 /* LineInfoView.swift */,
 				FC9CF6EA24A342B900833683 /* DateExtension.swift */,
 				FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */,
 				FCB2433C24ADD479006587CA /* SwipeView Extensions */,
+				FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,10 +432,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6E29772498D91100D2BFE3 /* LaunchScreen.storyboard in Resources */,
+				FC7D4C6824D235B2000E6756 /* Lato-Bold.ttf in Resources */,
 				FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */,
+				FC7D4C6624D21BAC000E6756 /* Lato-Regular.ttf in Resources */,
+				FC48956624D1EB4F002DDE8E /* LilitaOne.ttf in Resources */,
+				FC48956824D1ED50002DDE8E /* LaunchScreen.storyboard in Resources */,
 				FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */,
-				FC6E29742498D91100D2BFE3 /* Assets.xcassets in Resources */,
+				FC804B1F24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf in Resources */,
+				FC48956D24D1FD30002DDE8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,24 +492,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4AE3C324D035DB00FE14F7 /* SovmestimostModel.swift in Sources */,
 				FCBF39F924AA9781005C4951 /* LineInfoView.swift in Sources */,
 				FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */,
+				FC4AE3C124D035B700FE14F7 /* SoupHelper.swift in Sources */,
 				FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */,
+				FC4AE3D424D0418900FE14F7 /* NatalCardVC.swift in Sources */,
 				FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */,
+				FC4AE3C824D03B7700FE14F7 /* HoroLabel.swift in Sources */,
 				FCB2434024ADD885006587CA /* SwipeButton.swift in Sources */,
 				FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */,
+				FC804B2124D7130300C7B91C /* LineTextField.swift in Sources */,
+				FC4AE3C524D038AD00FE14F7 /* SovmestimostSecondVC.swift in Sources */,
 				FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */,
 				FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */,
 				FCB2434224ADE45C006587CA /* SwipeDatePicker.swift in Sources */,
 				FC0B3ACB24AE6765006E40D9 /* TextFieldInfo.swift in Sources */,
 				FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */,
+				FC4AE3D224D040C900FE14F7 /* AstroStrings.swift in Sources */,
+				FC4AE3D624D041F000FE14F7 /* Parser.swift in Sources */,
+				FC7D4C6A24D2380D000E6756 /* UIView+Extension.swift in Sources */,
 				FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */,
+				FC3D602724CF028A0083DC0C /* SovmestimostVC.swift in Sources */,
 				FC10183A249D218D0073BA80 /* MUser.swift in Sources */,
 				FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */,
 				FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */,
 				FCB2433E24ADD49B006587CA /* SwipeTextField.swift in Sources */,
 				FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */,
+				FC4AE3CC24D0400800FE14F7 /* StringExtension.swift in Sources */,
 				FCB2433B24ADD239006587CA /* SwipeLabelExtension.swift in Sources */,
+				FC4AE3D024D0409E00FE14F7 /* NatalModel.swift in Sources */,
 				FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */,
 				FCA752C8249E408200110B2E /* UserError.swift in Sources */,
 				FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */,
@@ -393,17 +537,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FC6E29752498D91100D2BFE3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC6E29762498D91100D2BFE3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FC6E29792498D91100D2BFE3 /* Debug */ = {
@@ -530,6 +663,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33G9T39B5T;
 				INFOPLIST_FILE = AstrologyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,6 +683,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33G9T39B5T;
 				INFOPLIST_FILE = AstrologyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

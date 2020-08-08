@@ -16,6 +16,9 @@ class SwipeDatePicker: UIDatePicker {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.datePickerMode = mode
         self.locale = Locale(identifier: "ru_RU")
+        self.setValue(UIColor.white, forKey: "textColor")
     }
+    
+    
     
 }

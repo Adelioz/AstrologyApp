@@ -9,4 +9,5 @@ target 'AstrologyApp' do
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
 pod 'Firebase/Auth'
+pod 'SwiftSoup'
 end

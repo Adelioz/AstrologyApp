@@ -14,9 +14,13 @@ class SwipeLabel: UILabel {
         self.init()
         
         self.text = text
-        self.textAlignment = .center
-        self.font = UIFont.boldSystemFont(ofSize: 30)
+        self.textAlignment = .left
+        self.adjustsFontSizeToFitWidth = true
+        self.minimumScaleFactor = 0.5
+        self.textColor = .white
+        self.font = UIFont(name: "GothamProNarrow-Bold", size: 40)
         self.translatesAutoresizingMaskIntoConstraints = false
+        
         
     }
     

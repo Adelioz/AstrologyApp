@@ -35,8 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                     sex: muser.sex,
                                                     mail: muser.email,
                                                     isEdited: muser.isEdited)
-                case .failure(_):
+                case .failure(let error):
                     print("ВСЕ ПОШЛО ПО ПИЗДЕ")
+                    print(error.localizedDescription)
                 }
             }
         }
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                switch result {
 //
 //                case .success(let muser):
-//                    self.window?.rootViewController = MainMenuViewController()
+//                    self.window?.rootViewController = MainTabBarController()
 //                case .failure(let error):
 //                    self.window?.rootViewController = helloViewController
 //                }
