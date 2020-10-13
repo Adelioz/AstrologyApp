@@ -249,7 +249,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate, UIPickerViewD
     
     
     
-    //MARK: BOTTOM CONTROL
+    //MARK: - BOTTOM CONTROL
     
     
     let pageControl: UIPageControl = {
@@ -356,7 +356,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate, UIPickerViewD
         nextButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
         nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: view.frame.height * 56/812).isActive = true
-        nextButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1))
+        nextButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1), horizontal: true)
         nextButton.layer.cornerRadius = nextButton.frame.size.height / 2
         nextButton.clipsToBounds = true
     }
@@ -364,7 +364,7 @@ class SwipeViewController: UIViewController, UIScrollViewDelegate, UIPickerViewD
     
     
     
-    //MARK: UIScrollViewDelegate METHODS
+    //MARK: - UIScrollViewDelegate METHODS
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         pageControl.currentPage = Int((scrollView.contentOffset.x + (CGFloat(view.frame.width) / 2)) / CGFloat(view.frame.width))

@@ -13,6 +13,7 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupBackgroundImage()
         view.addSubview(label)
         label.heightAnchor.constraint(equalToConstant: 30).isActive = true
         label.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
@@ -20,6 +21,19 @@ class TestViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.title = "Test"
+    }
+    
+    func setupBackgroundImage() {
+        let image = UIImageView()
+        image.image = UIImage(named: "authorization_background")
+        image.contentMode = .scaleAspectFill
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(image)
+        image.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        image.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        image.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        image.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
     

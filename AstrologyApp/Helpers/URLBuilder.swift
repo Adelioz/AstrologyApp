@@ -80,4 +80,22 @@ class URLBuilder {
         
     }
     
+    //MARK: - Horoscope
+    
+    func buildURL(sign: String, period: String) -> URL? {
+        
+        var u = "/\(sign)/"
+        if period != "" {
+            u += "\(period)/"
+        }
+        
+        var urlComp = URLComponents()
+        
+        urlComp.scheme = "https"
+        urlComp.host = "horoscopes.rambler.ru"
+        urlComp.path = "\(u)"
+        
+        return urlComp.url
+    }
+    
 }

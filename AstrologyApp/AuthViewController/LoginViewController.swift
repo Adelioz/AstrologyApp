@@ -177,7 +177,7 @@ class LoginViewController: UIViewController {
         print("jncekjnek   \(view.frame.height) efkenfekj    \(view.layer)")
         loginButton.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 293/335).isActive = true
         loginButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -30).isActive = true
-        loginButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1))
+        loginButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1), horizontal: true)
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
         loginButton.clipsToBounds = true
         

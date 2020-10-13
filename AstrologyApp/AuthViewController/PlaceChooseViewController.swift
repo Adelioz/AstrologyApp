@@ -109,7 +109,7 @@ class PlaceChooseViewController: UIView {
     
     func viewSetup() {
         //self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.animateOut)))
-        self.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.frame = UIScreen.main.bounds
         self.addSubview(container)
         

@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		C441491BE942C7D48702E5BE /* Pods_AstrologyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */; };
+		FC02A334252E155400A56104 /* SignChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A333252E155400A56104 /* SignChooseViewController.swift */; };
+		FC02A338252E88AB00A56104 /* SignChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A337252E88AB00A56104 /* SignChooseCell.swift */; };
 		FC0B3ACB24AE6765006E40D9 /* TextFieldInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */; };
 		FC10183A249D218D0073BA80 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101839249D218D0073BA80 /* MUser.swift */; };
 		FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */; };
 		FC101841249D49DB0073BA80 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC101840249D49DB0073BA80 /* RegistrationViewController.swift */; };
+		FC1A769325037B6F00A4964C /* HoroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A769225037B6F00A4964C /* HoroTableViewCell.swift */; };
+		FC1A76952506367900A4964C /* SignTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A76942506367900A4964C /* SignTableViewCell.swift */; };
 		FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */; };
 		FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */; };
 		FC3D602724CF028A0083DC0C /* SovmestimostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */; };
+		FC440A1424E176160037DF21 /* UITabBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC440A1324E176160037DF21 /* UITabBar + Extension.swift */; };
+		FC440A1624E1A0BF0037DF21 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC440A1524E1A0BF0037DF21 /* SFProText-Medium.ttf */; };
 		FC48956624D1EB4F002DDE8E /* LilitaOne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC48956524D1EB4E002DDE8E /* LilitaOne.ttf */; };
 		FC48956824D1ED50002DDE8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC48956724D1ED50002DDE8E /* LaunchScreen.storyboard */; };
 		FC48956D24D1FD30002DDE8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC48956C24D1FD30002DDE8E /* Assets.xcassets */; };
@@ -35,6 +41,8 @@
 		FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E296C2498D90F00D2BFE3 /* AppDelegate.swift */; };
 		FC6E298F2498E72700D2BFE3 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */; };
 		FC6E29912498EE9100D2BFE3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC6E29902498EE9100D2BFE3 /* .gitignore */; };
+		FC72F7762507B0FA00D1B6B8 /* SignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72F7752507B0FA00D1B6B8 /* SignCollectionViewCell.swift */; };
+		FC7B47E3250BCEA600AEB878 /* SignCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B47E2250BCEA600AEB878 /* SignCellModel.swift */; };
 		FC7D4C6624D21BAC000E6756 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */; };
 		FC7D4C6824D235B2000E6756 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */; };
 		FC7D4C6A24D2380D000E6756 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */; };
@@ -42,34 +50,46 @@
 		FC804B2124D7130300C7B91C /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC804B2024D7130300C7B91C /* LineTextField.swift */; };
 		FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9CF6EA24A342B900833683 /* DateExtension.swift */; };
 		FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */; };
+		FCA1F9B72514342F00591D16 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCA1F9B62514342F00591D16 /* SFProText-Semibold.ttf */; };
 		FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BA249E231500110B2E /* LoginViewController.swift */; };
 		FCA752BF249E283A00110B2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752BE249E283A00110B2E /* AuthService.swift */; };
 		FCA752C1249E314D00110B2E /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C0249E314D00110B2E /* Validators.swift */; };
 		FCA752C4249E320100110B2E /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C3249E320100110B2E /* AuthError.swift */; };
 		FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C5249E3DE400110B2E /* FirestoreService.swift */; };
 		FCA752C8249E408200110B2E /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA752C7249E408200110B2E /* UserError.swift */; };
+		FCAA195B2518ECFC004B17DF /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAA195A2518ECFC004B17DF /* UIImage + Extension.swift */; };
 		FCB2433B24ADD239006587CA /* SwipeLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433A24ADD239006587CA /* SwipeLabelExtension.swift */; };
 		FCB2433E24ADD49B006587CA /* SwipeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433D24ADD49B006587CA /* SwipeTextField.swift */; };
 		FCB2434024ADD885006587CA /* SwipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2433F24ADD885006587CA /* SwipeButton.swift */; };
 		FCB2434224ADE45C006587CA /* SwipeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB2434124ADE45C006587CA /* SwipeDatePicker.swift */; };
+		FCB3D5D6251A5280002FE10E /* SovmestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3D5D5251A5280002FE10E /* SovmestTableViewCell.swift */; };
+		FCB3D5D8251A5EA4002FE10E /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3D5D7251A5EA4002FE10E /* UIView + Extension.swift */; };
+		FCB3D5DB251A60A8002FE10E /* HoroscopeSoup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3D5DA251A60A8002FE10E /* HoroscopeSoup.swift */; };
 		FCBF39F024AA89D5005C4951 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39EF24AA89D4005C4951 /* LineButton.swift */; };
 		FCBF39F324AA8FCD005C4951 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */; };
 		FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */; };
 		FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */; };
 		FCBF39F924AA9781005C4951 /* LineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF39F824AA9781005C4951 /* LineInfoView.swift */; };
+		FCC45B38250A500C00A25D4F /* SignCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC45B37250A500C00A25D4F /* SignCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		537305BAE88B47D0B6FE13DE /* Pods_AstrologyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstrologyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		894EE3E57923D03F44309D47 /* Pods-AstrologyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.debug.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9313DA00CCF5173038568A46 /* Pods-AstrologyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstrologyApp.release.xcconfig"; path = "Target Support Files/Pods-AstrologyApp/Pods-AstrologyApp.release.xcconfig"; sourceTree = "<group>"; };
+		FC02A333252E155400A56104 /* SignChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignChooseViewController.swift; sourceTree = "<group>"; };
+		FC02A337252E88AB00A56104 /* SignChooseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignChooseCell.swift; sourceTree = "<group>"; };
 		FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInfo.swift; sourceTree = "<group>"; };
 		FC101839249D218D0073BA80 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		FC10183B249D2DF10073BA80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC101840249D49DB0073BA80 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		FC1A769225037B6F00A4964C /* HoroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroTableViewCell.swift; sourceTree = "<group>"; };
+		FC1A76942506367900A4964C /* SignTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignTableViewCell.swift; sourceTree = "<group>"; };
 		FC31FF9924A62CBA00BAA14F /* PlaceChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceChooseViewController.swift; sourceTree = "<group>"; };
 		FC31FF9B24A62CD800BAA14F /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovmestimostVC.swift; sourceTree = "<group>"; };
+		FC440A1324E176160037DF21 /* UITabBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar + Extension.swift"; sourceTree = "<group>"; };
+		FC440A1524E1A0BF0037DF21 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Medium.ttf"; path = "../../../../../Downloads/SFProText-Medium.ttf"; sourceTree = "<group>"; };
 		FC48956524D1EB4E002DDE8E /* LilitaOne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LilitaOne.ttf; path = ../../../../../Downloads/LilitaOne.ttf; sourceTree = "<group>"; };
 		FC48956724D1ED50002DDE8E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC48956C24D1FD30002DDE8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +112,8 @@
 		FC6E29782498D91100D2BFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E298E2498E72700D2BFE3 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		FC6E29902498EE9100D2BFE3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FC72F7752507B0FA00D1B6B8 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC7B47E2250BCEA600AEB878 /* SignCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCellModel.swift; sourceTree = "<group>"; };
 		FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../../../Downloads/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "../../../../../Downloads/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -99,21 +121,27 @@
 		FC804B2024D7130300C7B91C /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		FC9CF6EA24A342B900833683 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FC9DF1DF24ABE5CB00B83943 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		FCA1F9B62514342F00591D16 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Semibold.ttf"; path = "../../../../../Downloads/SFProText-Semibold.ttf"; sourceTree = "<group>"; };
 		FCA752BA249E231500110B2E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCA752BE249E283A00110B2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FCA752C0249E314D00110B2E /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		FCA752C3249E320100110B2E /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		FCA752C5249E3DE400110B2E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		FCA752C7249E408200110B2E /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		FCAA195A2518ECFC004B17DF /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		FCB2433A24ADD239006587CA /* SwipeLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeLabelExtension.swift; sourceTree = "<group>"; };
 		FCB2433D24ADD49B006587CA /* SwipeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTextField.swift; sourceTree = "<group>"; };
 		FCB2433F24ADD885006587CA /* SwipeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButton.swift; sourceTree = "<group>"; };
 		FCB2434124ADE45C006587CA /* SwipeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDatePicker.swift; sourceTree = "<group>"; };
+		FCB3D5D5251A5280002FE10E /* SovmestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovmestTableViewCell.swift; sourceTree = "<group>"; };
+		FCB3D5D7251A5EA4002FE10E /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		FCB3D5DA251A60A8002FE10E /* HoroscopeSoup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeSoup.swift; sourceTree = "<group>"; };
 		FCBF39EF24AA89D4005C4951 /* LineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
 		FCBF39F224AA8FCD005C4951 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		FCBF39F424AA8FDC005C4951 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		FCBF39F824AA9781005C4951 /* LineInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineInfoView.swift; sourceTree = "<group>"; };
+		FCC45B37250A500C00A25D4F /* SignCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +190,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FC1A769125037B3600A4964C /* HoroTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FCB3D5D9251A605B002FE10E /* HoroscopeSoup */,
+				FC1A769225037B6F00A4964C /* HoroTableViewCell.swift */,
+				FCB3D5D7251A5EA4002FE10E /* UIView + Extension.swift */,
+				FC1A76942506367900A4964C /* SignTableViewCell.swift */,
+				FCC45B36250A4FE000A25D4F /* Sign CollectionView */,
+			);
+			path = HoroTableViewCell;
+			sourceTree = "<group>";
+		};
 		FC3D602324CF02040083DC0C /* MainVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +214,8 @@
 		FC48956424D1EB28002DDE8E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FCA1F9B62514342F00591D16 /* SFProText-Semibold.ttf */,
+				FC440A1524E1A0BF0037DF21 /* SFProText-Medium.ttf */,
 				FC804B1E24D70B0C00C7B91C /* GothamProNarrow-Bold.ttf */,
 				FC7D4C6724D235B2000E6756 /* Lato-Bold.ttf */,
 				FC7D4C6524D21BAC000E6756 /* Lato-Regular.ttf */,
@@ -189,7 +231,9 @@
 				FC4AE3BF24D035A600FE14F7 /* Helpers */,
 				FC4AE3BE24D0359E00FE14F7 /* Model */,
 				FC3D602624CF028A0083DC0C /* SovmestimostVC.swift */,
+				FC02A333252E155400A56104 /* SignChooseViewController.swift */,
 				FC4AE3C424D038AD00FE14F7 /* SovmestimostSecondVC.swift */,
+				FCB3D5D4251A5263002FE10E /* Sovmest2TableViewCell */,
 			);
 			path = Sovmestimost;
 			sourceTree = "<group>";
@@ -214,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4AE3C724D03B7700FE14F7 /* HoroLabel.swift */,
+				FCAA195A2518ECFC004B17DF /* UIImage + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,11 +299,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FC4F71D624FEB3F60041DC2F /* Main Tab Bar Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC804B2024D7130300C7B91C /* LineTextField.swift */,
+				FCBF39EF24AA89D4005C4951 /* LineButton.swift */,
+				FCBF39F824AA9781005C4951 /* LineInfoView.swift */,
+			);
+			path = "Main Tab Bar Extensions";
+			sourceTree = "<group>";
+		};
 		FC52FE2224AA00AB00CCD067 /* Main Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				FC52FE1A24AA005A00CCD067 /* MainMenuViewController.swift */,
 				FC52FE1C24AA007000CCD067 /* HoroscopeViewController.swift */,
+				FC1A769125037B3600A4964C /* HoroTableViewCell */,
 				FC52FE1E24AA007F00CCD067 /* TestViewController.swift */,
 				FC52FE2024AA00A500CCD067 /* MoreViewController.swift */,
 				FCBF39F124AA8FB5005C4951 /* MoreVCs */,
@@ -348,15 +404,31 @@
 			path = "SwipeView Extensions";
 			sourceTree = "<group>";
 		};
+		FCB3D5D4251A5263002FE10E /* Sovmest2TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FCB3D5D5251A5280002FE10E /* SovmestTableViewCell.swift */,
+				FC02A337252E88AB00A56104 /* SignChooseCell.swift */,
+			);
+			path = Sovmest2TableViewCell;
+			sourceTree = "<group>";
+		};
+		FCB3D5D9251A605B002FE10E /* HoroscopeSoup */ = {
+			isa = PBXGroup;
+			children = (
+				FCB3D5DA251A60A8002FE10E /* HoroscopeSoup.swift */,
+			);
+			path = HoroscopeSoup;
+			sourceTree = "<group>";
+		};
 		FCBF39EE24AA89C5005C4951 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FCBF39EF24AA89D4005C4951 /* LineButton.swift */,
-				FC804B2024D7130300C7B91C /* LineTextField.swift */,
-				FCBF39F824AA9781005C4951 /* LineInfoView.swift */,
 				FC9CF6EA24A342B900833683 /* DateExtension.swift */,
 				FC0B3ACA24AE6765006E40D9 /* TextFieldInfo.swift */,
+				FC440A1324E176160037DF21 /* UITabBar + Extension.swift */,
 				FCB2433C24ADD479006587CA /* SwipeView Extensions */,
+				FC4F71D624FEB3F60041DC2F /* Main Tab Bar Extensions */,
 				FC7D4C6924D2380D000E6756 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
@@ -370,6 +442,16 @@
 				FCBF39F624AA8FE6005C4951 /* SupportViewController.swift */,
 			);
 			path = MoreVCs;
+			sourceTree = "<group>";
+		};
+		FCC45B36250A4FE000A25D4F /* Sign CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FCC45B37250A500C00A25D4F /* SignCollectionView.swift */,
+				FC72F7752507B0FA00D1B6B8 /* SignCollectionViewCell.swift */,
+				FC7B47E2250BCEA600AEB878 /* SignCellModel.swift */,
+			);
+			path = "Sign CollectionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,8 +514,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC440A1624E1A0BF0037DF21 /* SFProText-Medium.ttf in Resources */,
 				FC7D4C6824D235B2000E6756 /* Lato-Bold.ttf in Resources */,
 				FC10183C249D2DF10073BA80 /* GoogleService-Info.plist in Resources */,
+				FCA1F9B72514342F00591D16 /* SFProText-Semibold.ttf in Resources */,
 				FC7D4C6624D21BAC000E6756 /* Lato-Regular.ttf in Resources */,
 				FC48956624D1EB4F002DDE8E /* LilitaOne.ttf in Resources */,
 				FC48956824D1ED50002DDE8E /* LaunchScreen.storyboard in Resources */,
@@ -496,32 +580,44 @@
 				FCBF39F924AA9781005C4951 /* LineInfoView.swift in Sources */,
 				FCA752BB249E231500110B2E /* LoginViewController.swift in Sources */,
 				FC4AE3C124D035B700FE14F7 /* SoupHelper.swift in Sources */,
+				FCB3D5DB251A60A8002FE10E /* HoroscopeSoup.swift in Sources */,
 				FC31FF9C24A62CD800BAA14F /* URLBuilder.swift in Sources */,
 				FC4AE3D424D0418900FE14F7 /* NatalCardVC.swift in Sources */,
 				FCBF39F724AA8FE6005C4951 /* SupportViewController.swift in Sources */,
 				FC4AE3C824D03B7700FE14F7 /* HoroLabel.swift in Sources */,
 				FCB2434024ADD885006587CA /* SwipeButton.swift in Sources */,
 				FC52FE1F24AA007F00CCD067 /* TestViewController.swift in Sources */,
+				FC1A76952506367900A4964C /* SignTableViewCell.swift in Sources */,
+				FCC45B38250A500C00A25D4F /* SignCollectionView.swift in Sources */,
 				FC804B2124D7130300C7B91C /* LineTextField.swift in Sources */,
 				FC4AE3C524D038AD00FE14F7 /* SovmestimostSecondVC.swift in Sources */,
 				FCBF39F524AA8FDC005C4951 /* AboutViewController.swift in Sources */,
 				FC31FF9A24A62CBA00BAA14F /* PlaceChooseViewController.swift in Sources */,
 				FCB2434224ADE45C006587CA /* SwipeDatePicker.swift in Sources */,
+				FC7B47E3250BCEA600AEB878 /* SignCellModel.swift in Sources */,
+				FCB3D5D8251A5EA4002FE10E /* UIView + Extension.swift in Sources */,
 				FC0B3ACB24AE6765006E40D9 /* TextFieldInfo.swift in Sources */,
 				FC9CF6EB24A342B900833683 /* DateExtension.swift in Sources */,
+				FCB3D5D6251A5280002FE10E /* SovmestTableViewCell.swift in Sources */,
 				FC4AE3D224D040C900FE14F7 /* AstroStrings.swift in Sources */,
 				FC4AE3D624D041F000FE14F7 /* Parser.swift in Sources */,
 				FC7D4C6A24D2380D000E6756 /* UIView+Extension.swift in Sources */,
+				FC02A334252E155400A56104 /* SignChooseViewController.swift in Sources */,
 				FCA752C6249E3DE400110B2E /* FirestoreService.swift in Sources */,
+				FC1A769325037B6F00A4964C /* HoroTableViewCell.swift in Sources */,
+				FC02A338252E88AB00A56104 /* SignChooseCell.swift in Sources */,
 				FC3D602724CF028A0083DC0C /* SovmestimostVC.swift in Sources */,
 				FC10183A249D218D0073BA80 /* MUser.swift in Sources */,
 				FC52FE1B24AA005A00CCD067 /* MainMenuViewController.swift in Sources */,
 				FC6E296D2498D90F00D2BFE3 /* AppDelegate.swift in Sources */,
+				FCAA195B2518ECFC004B17DF /* UIImage + Extension.swift in Sources */,
+				FC440A1424E176160037DF21 /* UITabBar + Extension.swift in Sources */,
 				FCB2433E24ADD49B006587CA /* SwipeTextField.swift in Sources */,
 				FC52FE2124AA00A500CCD067 /* MoreViewController.swift in Sources */,
 				FC4AE3CC24D0400800FE14F7 /* StringExtension.swift in Sources */,
 				FCB2433B24ADD239006587CA /* SwipeLabelExtension.swift in Sources */,
 				FC4AE3D024D0409E00FE14F7 /* NatalModel.swift in Sources */,
+				FC72F7762507B0FA00D1B6B8 /* SignCollectionViewCell.swift in Sources */,
 				FC9DF1E024ABE5CB00B83943 /* UserSettings.swift in Sources */,
 				FCA752C8249E408200110B2E /* UserError.swift in Sources */,
 				FC52FE1D24AA007000CCD067 /* HoroscopeViewController.swift in Sources */,
@@ -663,7 +759,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33G9T39B5T;
 				INFOPLIST_FILE = AstrologyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,7 +767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bb.vdeliozzz.AstrologyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,7 +779,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33G9T39B5T;
 				INFOPLIST_FILE = AstrologyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,7 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bb.vdeliozzz.AstrologyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

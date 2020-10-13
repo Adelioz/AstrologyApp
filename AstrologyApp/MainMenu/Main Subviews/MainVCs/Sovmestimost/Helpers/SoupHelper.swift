@@ -22,7 +22,6 @@ class SoupHelper {
             let myHTMLString = try String(contentsOf: myURL, encoding: .utf8)
             let doc: Document = try SwiftSoup.parse(myHTMLString)
             let div: Elements = try doc.select("div")
-            print(div.count)
             let per: Element = try doc.getElementsByClass("_2Dn_").last()!
             sovmest.percent = try per.text()
             

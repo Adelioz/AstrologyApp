@@ -35,7 +35,7 @@ class RegistrationViewController: UIViewController {
         image.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-    //MARK: First Layer setup (scrollView + left & right views)
+    //MARK: - First Layer setup (scrollView + left & right views)
     
     let scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -47,7 +47,7 @@ class RegistrationViewController: UIViewController {
         return scroll
     }()
     
-    //MARK: UIViews (first layer)
+    //MARK: - UIViews (first layer)
     let helloView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -88,7 +88,7 @@ class RegistrationViewController: UIViewController {
     }
     
     
-    //MARK: helloView setup
+    //MARK: - helloView setup
     
     let helloLabel: UILabel = {
         let label = UILabel()
@@ -130,7 +130,7 @@ class RegistrationViewController: UIViewController {
         button.setTitle("Приступить", for: .normal)
         button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 20)
         button.setTitleColor(.white, for: .normal)
-        button.setGradientBackground(colorOne: .red, colorTwo: .gray)
+        //button.setGradientBackground(colorOne: .red, colorTwo: .gray)
         button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -165,7 +165,7 @@ class RegistrationViewController: UIViewController {
         helloNextButton.trailingAnchor.constraint(equalTo: helloView.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
         helloNextButton.heightAnchor.constraint(equalToConstant: view.frame.height * 56/812).isActive = true
         print(view.frame)
-        helloNextButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1))
+        helloNextButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1), horizontal: true)
         helloNextButton.layer.cornerRadius = helloNextButton.frame.size.height / 2
         helloNextButton.clipsToBounds = true
         
@@ -183,7 +183,7 @@ class RegistrationViewController: UIViewController {
     }
     
     
-    //MARK: registerView setup
+    //MARK: - registerView setup
     //поле емейл оформить как вью с вложенными лейблом текстфилдом и полоской снизу
     //тест оформить как структуру и при каждом прохождении сравнивать результаты пользователя с эталоном
     
@@ -238,7 +238,7 @@ class RegistrationViewController: UIViewController {
         button.setTitle("Зарегистрироваться", for: .normal)
         button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 20)
         button.setTitleColor(.white, for: .normal)
-        button.setGradientBackground(colorOne: .red, colorTwo: .gray)
+        //button.setGradientBackground(colorOne: .red, colorTwo: .gray)
         button.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -317,7 +317,7 @@ class RegistrationViewController: UIViewController {
         registerButton.heightAnchor.constraint(equalToConstant: view.frame.height * 56/812).isActive = true
         registerButton.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 293/335).isActive = true
         registerButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -30).isActive = true
-        registerButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1))
+        registerButton.setGradientBackground(colorOne: #colorLiteral(red: 0.568627451, green: 0.5607843137, blue: 0.9294117647, alpha: 1), colorTwo: #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1), horizontal: true)
         registerButton.layer.cornerRadius = registerButton.frame.height / 2
         registerButton.clipsToBounds = true
         

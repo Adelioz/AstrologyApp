@@ -45,8 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //window?.rootViewController = SwipeViewController(currentUser: Auth.auth().currentUser!)
         window?.rootViewController = MainTabBarController()
         
-        //let helloViewController = RegistrationViewController()
-        //window?.rootViewController = helloViewController
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+//        let helloViewController = RegistrationViewController()
+//        window?.rootViewController = helloViewController
         
 //        print(Auth.auth().currentUser?.email)
 //        if let user = Auth.auth().currentUser {

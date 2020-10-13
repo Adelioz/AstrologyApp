@@ -24,6 +24,9 @@ struct Sovmest {
     var workTitle = ""
     
     var percent = ""
+    
+    var leftSign = SignCellModel()
+    var rightSign = SignCellModel()
 }
 
 struct SignPair {

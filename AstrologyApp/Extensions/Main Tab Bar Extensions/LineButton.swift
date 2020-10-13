@@ -16,6 +16,7 @@ class LineButton: UIButton {
         
         let label = UILabel()
         label.text = labelText
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
@@ -54,6 +55,37 @@ class LineButton: UIButton {
                 ])
         }
 
+        
+    }
+    
+    
+    convenience init(labelText: String) {
+        self.init()
+        
+        let label = UILabel()
+        label.text = labelText
+        label.font = UIFont(name: "Lato-Bold", size: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(label)
+        NSLayoutConstraint.activate([
+        label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+        label.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
+        
+        
+        var line = UIView()
+        line = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+        line.translatesAutoresizingMaskIntoConstraints = false
+        line.backgroundColor = .white
+        
+        self.addSubview(line)
+        NSLayoutConstraint.activate([
+        line.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 1),
+        line.leadingAnchor.constraint(equalTo: label.leadingAnchor),
+        line.trailingAnchor.constraint(equalTo: label.trailingAnchor),
+        line.heightAnchor.constraint(equalToConstant: 1)
+        ])
         
     }
     
